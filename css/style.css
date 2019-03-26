@@ -134,6 +134,16 @@ h3 {
       background: #FCF3FA;
       width: 100%;
       height: 100%; }
+      #randomScreen .episode-area .seriesArea .descriptions-trivia {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        padding: 24px 24px 0; }
+        #randomScreen .episode-area .seriesArea .descriptions-trivia .decription-copy {
+          font-size: 14px;
+          color: #223041; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;

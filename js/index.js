@@ -16,7 +16,10 @@ var d = document,
   cn2 = document.getElementById("catNetflix").children[2],
   cn3 = document.getElementById("catNetflix").children[3],
   cn4 = document.getElementById("catNetflix").children[4],
-  cn5 = document.getElementById("catNetflix").children[5];
+  cn5 = document.getElementById("catNetflix").children[5],
+  dt0 = document.getElementById("descriptionTrivia").children[0],
+  dt1 = document.getElementById("descriptionTrivia").children[1],
+  dt2 = document.getElementById("descriptionTrivia").children[2];
 
     cg0.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
     cg1.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
@@ -64,6 +67,7 @@ TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
 TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 TweenLite.set(['.dislike', '.like'], { autoAlpha:.7 });
+TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 
 TweenLite.set([seriesCategory, '.randomWheel'], { autoAlpha:0 });
 

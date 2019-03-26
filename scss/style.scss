@@ -35,7 +35,11 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       }
       .heart-top { position: relative; width: 21px; height: 18px; }
     }
-    .seriesArea { position: relative; background: #FCF3FA; width: 100%; height: 100%; }
+    .seriesArea { position: relative; background: #FCF3FA; width: 100%; height: 100%;
+      .descriptions-trivia { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%; padding: 24px 24px 0;
+        .decription-copy { font-size: 14px; color: #223041; }
+      }
+    }
   }
 
   #quickLook { position: absolute; background: #fff; width: 100%; top: 692px;
