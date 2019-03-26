@@ -52,6 +52,7 @@ var d = document,
     cn5.style.backgroundSize = 'cover';
 
     seriesCategory.innerHTML = 'Trending';
+    seriesTitle.innerHTML = 'The Handmaid\'s Tale';
 
 var reverseWheel = 0;
 
