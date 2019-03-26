@@ -56,6 +56,9 @@ h3 {
     margin-left: -2000px;
     top: 144px; }
   #randomScreen .seriesInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     padding-bottom: 75px; }
     #randomScreen .seriesInfo .seriesTT {
@@ -63,8 +66,30 @@ h3 {
       text-align: center;
       color: #fff; }
     #randomScreen .seriesInfo .starRating {
+      display: flex;
+      flex-direction: row;
       position: relative;
       padding-top: 8px; }
+      #randomScreen .seriesInfo .starRating .star {
+        position: relative;
+        width: 13px;
+        height: 12px;
+        margin: 0 4px; }
+    #randomScreen .seriesInfo .like-feature {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      padding-top: 20px; }
+      #randomScreen .seriesInfo .like-feature .dislike {
+        position: relative;
+        width: 25px;
+        height: 21px;
+        margin: 0 12px; }
+      #randomScreen .seriesInfo .like-feature .like {
+        position: relative;
+        width: 25px;
+        height: 22px;
+        margin: 0 12px; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;

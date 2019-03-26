@@ -16,10 +16,14 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
   }
   #seriesCategory { position: relative; color:#fff; padding-top: 64px; padding-bottom: 40px; text-align: center; }
   .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; top: 144px; }
-  .seriesInfo { position: relative; padding-bottom: 75px;
+  .seriesInfo { display: flex; flex-direction: column; align-items: center; position: relative; padding-bottom: 75px;
     .seriesTT { position: relative; text-align: center; color: #fff; }
-    .starRating { position: relative; padding-top: 8px; 
-      .star {  }
+    .starRating { display: flex; flex-direction: row; position: relative; padding-top: 8px;
+      .star { position: relative; width: 13px; height: 12px; margin: 0 4px; }
+    }
+    .like-feature { display: flex; flex-direction: row; position: relative; padding-top: 20px;
+      .dislike { position: relative; width: 25px; height: 21px; margin: 0 12px; }
+      .like { position: relative; width: 25px; height: 22px; margin: 0 12px; }
     }
   }
 

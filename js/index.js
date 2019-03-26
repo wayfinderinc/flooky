@@ -60,6 +60,7 @@ TweenLite.set('.randomWheel', { transformOrigin: 'center center', /*y:128*/ }); 
 TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
 TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
+TweenLite.set(['.dislike', '.like'], { autoAlpha:.7 });
 
 var rotationSnap = 9;
 Draggable.create("#randomWheel", {
