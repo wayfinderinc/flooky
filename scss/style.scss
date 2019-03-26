@@ -1,0 +1,40 @@
+//vars
+$h1-fontsize: 28px;
+// $h2-fontsize: 28px;
+$h3-fontsize: 18px;
+$cloud-grey: #C9D3DC;
+
+// body { margin:0; display: flex; justify-content: center; width: 100%; height: 100%; font-size: $body-fs; }
+
+.tt { font-size: $h1-fontsize; font-weight: 500; }
+.tt-3 { font-size: $h3-fontsize; font-weight: 400; }
+h1 { font-size: $h1-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
+h3 { font-size: $h3-fontsize; font-weight: 400; margin:0px; overflow:visible; padding:0px; }
+
+#flookyApp { position: absolute; width: 100vw; height: 100vh; overflow: hidden; }
+
+#randomScreen { position: absolute; width: 100%; height: 692px;
+  #gradientBg { position: absolute; width: 100%; height: 100%;
+    #background1 { position: absolute; width: 100%; height: 100%; background: #5483E6; background-blend-mode: multiply; }
+    #background2 { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%); background-blend-mode: lighten; opacity: .8; }
+  }
+  #seriesCategory { position: relative; color:#fff; padding-top: 64px; padding-bottom: 40px; text-align: center; }
+  .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; }
+
+  #quickLook { position: absolute; background: #fff; width: 100%; top: 692px;
+    ul { width: 2000px; height: 72px; margin:0; padding: 0px; }
+    ul li { background: $cloud-grey; width: 98px; height: 72px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; }
+  }
+
+  #wheelArm { position: absolute; width: 48px; height: 48px; top: 670px;
+    #armIcon { position: absolute; width: 20px; height: 28px; }
+    #wheelArmBg { position: absolute; width: 48px; height: 48px; border-radius: 12px; background: #FF7EAF; box-shadow: 4px 4px 8px 0 #E1E8EE; }
+  }
+}
+
+#topNavigation { position: absolute; width: 100%; height: 66px; top:0px;
+  #seriesSearch { position: absolute; width: 17px; height: 18px; top: 24px; left: 24px; }
+  #hambugerMenu { position: absolute; width: 24px; height: 18px; top: 24px; right: 24px; }
+}
+
+#widthandheight { position: absolute; left: 24px; top: 100px; }
