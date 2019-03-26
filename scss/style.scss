@@ -1,10 +1,11 @@
 //vars
 $h1-fontsize: 28px;
-// $h2-fontsize: 28px;
+$h2-fontsize: 20px;
 $h3-fontsize: 18px;
 $cloud-grey: #C9D3DC;
 
 h1 { font-size: $h1-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
+h2 { font-size: $h2-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
 h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
 
 #flookyApp { position: absolute; width: 100vw; height: 100vh; overflow: hidden; }
@@ -14,8 +15,8 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
     #background1 { position: absolute; width: 100%; height: 100%; background: #5483E6; background-blend-mode: multiply; }
     #background2 { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%); background-blend-mode: lighten; opacity: .8; }
   }
-  #seriesCategory { position: relative; color:#fff; padding-top: 64px; padding-bottom: 40px; text-align: center; }
-  .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; top: 144px; }
+  #seriesCategory { position: relative; color:#fff; padding-top: 66px; padding-bottom: 40px; text-align: center; }
+  .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; top: 146px; }
   .seriesInfo { display: flex; flex-direction: column; align-items: center; position: relative; padding-bottom: 75px;
     .seriesTT { position: relative; text-align: center; color: #fff; }
     .starRating { display: flex; flex-direction: row; position: relative; padding-top: 8px;
@@ -25,6 +26,16 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       .dislike { position: relative; width: 25px; height: 21px; margin: 0 12px; }
       .like { position: relative; width: 25px; height: 22px; margin: 0 12px; }
     }
+  }
+  .episode-area { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;
+    .series-info { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; position: relative; height: 152px; padding: 0 24px 16px;
+      .seriesTT { position: relative; text-align: left; color: #fff; }
+      .starRating { display: flex; flex-direction: row; position: relative; padding-top: 8px;
+        .star { position: relative; width: 13px; height: 12px; margin: 0 4px; }
+      }
+      .heart-top { position: relative; width: 21px; height: 18px; }
+    }
+    .seriesArea { position: relative; background: #FCF3FA; width: 100%; height: 100%; }
   }
 
   #quickLook { position: absolute; background: #fff; width: 100%; top: 692px;

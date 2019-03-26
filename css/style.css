@@ -5,6 +5,13 @@ h1 {
   overflow: visible;
   padding: 0px; }
 
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px;
+  overflow: visible;
+  padding: 0px; }
+
 h3 {
   font-size: 18px;
   font-weight: 500;
@@ -45,7 +52,7 @@ h3 {
   #randomScreen #seriesCategory {
     position: relative;
     color: #fff;
-    padding-top: 64px;
+    padding-top: 66px;
     padding-bottom: 40px;
     text-align: center; }
   #randomScreen .randomWheel {
@@ -54,7 +61,7 @@ h3 {
     height: 4000px;
     left: 50%;
     margin-left: -2000px;
-    top: 144px; }
+    top: 146px; }
   #randomScreen .seriesInfo {
     display: flex;
     flex-direction: column;
@@ -90,6 +97,43 @@ h3 {
         width: 25px;
         height: 22px;
         margin: 0 12px; }
+  #randomScreen .episode-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px; }
+    #randomScreen .episode-area .series-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      height: 152px;
+      padding: 0 24px 16px; }
+      #randomScreen .episode-area .series-info .seriesTT {
+        position: relative;
+        text-align: left;
+        color: #fff; }
+      #randomScreen .episode-area .series-info .starRating {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        padding-top: 8px; }
+        #randomScreen .episode-area .series-info .starRating .star {
+          position: relative;
+          width: 13px;
+          height: 12px;
+          margin: 0 4px; }
+      #randomScreen .episode-area .series-info .heart-top {
+        position: relative;
+        width: 21px;
+        height: 18px; }
+    #randomScreen .episode-area .seriesArea {
+      position: relative;
+      background: #FCF3FA;
+      width: 100%;
+      height: 100%; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;

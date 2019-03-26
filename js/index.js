@@ -52,7 +52,9 @@ var d = document,
     cn5.style.backgroundSize = 'cover';
 
     seriesCategory.innerHTML = 'Trending';
-    seriesTitle.innerHTML = 'The Handmaid\'s Tale';
+    var seriestitle = 'The Handmaid\'s Tale';
+    seriesTitle.innerHTML = seriestitle;
+    seriesTitleTop.innerHTML = seriestitle;
 
 var reverseWheel = 0;
 
@@ -62,6 +64,8 @@ TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
 TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 TweenLite.set(['.dislike', '.like'], { autoAlpha:.7 });
+
+TweenLite.set([seriesCategory, '.randomWheel'], { autoAlpha:0 });
 
 var rotationSnap = 9;
 Draggable.create(".randomWheel", {
