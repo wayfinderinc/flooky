@@ -4,22 +4,24 @@ $h1-fontsize: 28px;
 $h3-fontsize: 18px;
 $cloud-grey: #C9D3DC;
 
-// body { margin:0; display: flex; justify-content: center; width: 100%; height: 100%; font-size: $body-fs; }
-
-.tt { font-size: $h1-fontsize; font-weight: 500; }
-.tt-3 { font-size: $h3-fontsize; font-weight: 400; }
 h1 { font-size: $h1-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
-h3 { font-size: $h3-fontsize; font-weight: 400; margin:0px; overflow:visible; padding:0px; }
+h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
 
 #flookyApp { position: absolute; width: 100vw; height: 100vh; overflow: hidden; }
 
-#randomScreen { position: absolute; width: 100%; height: 692px;
+#randomScreen { display: flex; flex-direction: column; justify-content: space-between; position: absolute; width: 100%; height: 692px;
   #gradientBg { position: absolute; width: 100%; height: 100%;
     #background1 { position: absolute; width: 100%; height: 100%; background: #5483E6; background-blend-mode: multiply; }
     #background2 { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%); background-blend-mode: lighten; opacity: .8; }
   }
   #seriesCategory { position: relative; color:#fff; padding-top: 64px; padding-bottom: 40px; text-align: center; }
-  .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; }
+  .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; top: 144px; }
+  .seriesInfo { position: relative; padding-bottom: 75px;
+    .seriesTT { position: relative; text-align: center; color: #fff; }
+    .starRating { position: relative; padding-top: 8px; 
+      .star {  }
+    }
+  }
 
   #quickLook { position: absolute; background: #fff; width: 100%; top: 692px;
     ul { width: 2000px; height: 72px; margin:0; padding: 0px; }

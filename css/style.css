@@ -1,11 +1,3 @@
-.tt {
-  font-size: 28px;
-  font-weight: 500; }
-
-.tt-3 {
-  font-size: 18px;
-  font-weight: 400; }
-
 h1 {
   font-size: 28px;
   font-weight: 500;
@@ -15,7 +7,7 @@ h1 {
 
 h3 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0px;
   overflow: visible;
   padding: 0px; }
@@ -27,6 +19,9 @@ h3 {
   overflow: hidden; }
 
 #randomScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   width: 100%;
   height: 692px; }
@@ -58,7 +53,18 @@ h3 {
     width: 4000px;
     height: 4000px;
     left: 50%;
-    margin-left: -2000px; }
+    margin-left: -2000px;
+    top: 144px; }
+  #randomScreen .seriesInfo {
+    position: relative;
+    padding-bottom: 75px; }
+    #randomScreen .seriesInfo .seriesTT {
+      position: relative;
+      text-align: center;
+      color: #fff; }
+    #randomScreen .seriesInfo .starRating {
+      position: relative;
+      padding-top: 8px; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;
