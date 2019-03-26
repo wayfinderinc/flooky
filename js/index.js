@@ -62,7 +62,7 @@ TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 
 var rotationSnap = 9;
-Draggable.create("#randomWheel", {
+Draggable.create(".randomWheel", {
     type:"rotation",
     throwProps:true,
     snap:function(endValue) {
@@ -76,19 +76,19 @@ Draggable.create("#wheelArm", {
     bounds:{minY:-0, maxY:24},
     lockAxis:true,
     onClick:function() {
-      TweenLite.to(randomWheel, 1.2, { rotation:'-=288', ease:Expo.easeOut });
+      TweenLite.to('.randomWheel', 1.2, { rotation:'-=288', ease:Expo.easeOut });
     },
     onDrag:function(){
       reverseWheel++;
       if ( reverseWheel == 1 ){
-        TweenLite.to(randomWheel, .2, { rotation:'+=9', ease:Power0.easeNone });
+        TweenLite.to(".randomWheel", .2, { rotation:'+=9', ease:Power0.easeNone });
       }
     },
     onDragEnd:function() {
       reverseWheel = 0;
       var endingY = this.endY;
       if (endingY > 4){
-        TweenLite.to(randomWheel, 1.2, { rotation:'-=288', ease:Expo.easeOut });
+        TweenLite.to(".randomWheel", 1.2, { rotation:'-=288', ease:Expo.easeOut });
       }
       TweenLite.to(wheelArm, .2, { y:0, ease:Expo.easeOut });
     }
