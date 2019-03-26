@@ -27,9 +27,6 @@ h3 {
   overflow: hidden; }
 
 #randomScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: absolute;
   width: 100%;
   height: 692px; }
@@ -61,15 +58,7 @@ h3 {
     width: 4000px;
     height: 4000px;
     left: 50%;
-    margin-left: -2000px;
-    top: 144px; }
-  #randomScreen .seriesInfo {
-    position: relative;
-    padding: 0 0 100px 0; }
-    #randomScreen .seriesInfo .seriesTT {
-      position: relative;
-      text-align: center;
-      color: #000; }
+    margin-left: -2000px; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;
