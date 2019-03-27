@@ -144,6 +144,18 @@ h3 {
         #randomScreen .episode-area .seriesArea .descriptions-trivia .decription-copy {
           font-size: 14px;
           color: #223041; }
+      #randomScreen .episode-area .seriesArea .description-bar-area {
+        position: relative;
+        width: 100%;
+        padding: 8px 24px 0; }
+        #randomScreen .episode-area .seriesArea .description-bar-area .bar-bg {
+          background: rgba(219, 122, 196, 0.15);
+          width: 100%;
+          height: 4px; }
+          #randomScreen .episode-area .seriesArea .description-bar-area .bar-bg .bar {
+            width: 138px;
+            height: 100%;
+            background: linear-gradient(315deg, #796EFD 0%, #FF7EAF 100%); }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;

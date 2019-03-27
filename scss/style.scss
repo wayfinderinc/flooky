@@ -39,6 +39,11 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       .descriptions-trivia { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%; padding: 24px 24px 0;
         .decription-copy { font-size: 14px; color: #223041; }
       }
+      .description-bar-area { position: relative; width: 100%; padding: 8px 24px 0;
+        .bar-bg { background: rgba(219,122,196,0.15); width: 100%; height: 4px;
+          .bar { width: 138px; height: 100%; background: linear-gradient(315deg, #796EFD 0%, #FF7EAF 100%); }
+        }
+      }
     }
   }
 
