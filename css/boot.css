@@ -70,6 +70,7 @@ body { -webkit-touch-callout: none; -webkit-text-size-adjust: none; -webkit-user
 .color-body { color: #5e6977; }
 
 .l-h21 { line-height: 21px; }
+.l-h42 { line-height: 42px; }
 
 .w-33 { width: 33.3%; }
 .w-34 { width: 34%; }

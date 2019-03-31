@@ -44,6 +44,10 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
           .bar { width: 138px; height: 100%; background: linear-gradient(315deg, #796EFD 0%, #FF7EAF 100%); }
         }
       }
+      .episode-info { position: relative; padding: 24px 24px 0;
+        .imdb-episode-info { position: relative; color: #687588; font-family: "Open Sans", sans-serif; font-size: 12px; line-height: 17px; padding-top: 4px; }
+        .episode-description { position: relative; color: #505E72; font-family: "Open Sans", sans-serif; font-size: 12px; line-height: 21px; padding-top: 24px; }
+      }
     }
   }
 

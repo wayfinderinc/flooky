@@ -58,6 +58,9 @@ var d = document,
     var seriestitle = 'The Handmaid\'s Tale';
     seriesTitle.innerHTML = seriestitle;
     seriesTitleTop.innerHTML = seriestitle;
+    episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
+    imdbEpisdeInfo.innerHTML = 'Season 1 Episode 6 &nbsp;&bull;&nbsp;  Oct 26, 2018 &nbsp;&bull;&nbsp; 50min';
+    episodeDescription.innerHTML = 'Harvey, Roz, and Sisue explore a mysterious force of evil. Sabrina digs deeper in Ms. Wardwell\'s intentions. Hilda pursues a new beginning.';
 
 var reverseWheel = 0;
 
