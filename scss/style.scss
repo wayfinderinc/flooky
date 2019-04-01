@@ -27,7 +27,7 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       .like { position: relative; width: 25px; height: 22px; margin: 0 12px; }
     }
   }
-  .episode-area { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;
+  .episode-area { display: none; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;
     .series-info { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; position: relative; height: 152px; padding: 0 24px 16px;
       .seriesTT { position: relative; text-align: left; color: #fff; }
       .starRating { display: flex; flex-direction: row; position: relative; padding-top: 8px;

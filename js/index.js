@@ -5,18 +5,18 @@ var d = document,
   cg3 = document.getElementById("catGenre").children[3],
   cg4 = document.getElementById("catGenre").children[4],
   cg5 = document.getElementById("catGenre").children[5],
-  cf0 = document.getElementById("catFeatured").children[0],
-  cf1 = document.getElementById("catFeatured").children[1],
-  cf2 = document.getElementById("catFeatured").children[2],
-  cf3 = document.getElementById("catFeatured").children[3],
-  cf4 = document.getElementById("catFeatured").children[4],
-  cf5 = document.getElementById("catFeatured").children[5],
-  cn0 = document.getElementById("catNetflix").children[0],
-  cn1 = document.getElementById("catNetflix").children[1],
-  cn2 = document.getElementById("catNetflix").children[2],
-  cn3 = document.getElementById("catNetflix").children[3],
-  cn4 = document.getElementById("catNetflix").children[4],
-  cn5 = document.getElementById("catNetflix").children[5],
+  // cf0 = document.getElementById("catFeatured").children[0],
+  // cf1 = document.getElementById("catFeatured").children[1],
+  // cf2 = document.getElementById("catFeatured").children[2],
+  // cf3 = document.getElementById("catFeatured").children[3],
+  // cf4 = document.getElementById("catFeatured").children[4],
+  // cf5 = document.getElementById("catFeatured").children[5],
+  // cn0 = document.getElementById("catNetflix").children[0],
+  // cn1 = document.getElementById("catNetflix").children[1],
+  // cn2 = document.getElementById("catNetflix").children[2],
+  // cn3 = document.getElementById("catNetflix").children[3],
+  // cn4 = document.getElementById("catNetflix").children[4],
+  // cn5 = document.getElementById("catNetflix").children[5],
   dt0 = document.getElementById("descriptionTrivia").children[0],
   dt1 = document.getElementById("descriptionTrivia").children[1],
   dt2 = document.getElementById("descriptionTrivia").children[2];
@@ -28,31 +28,31 @@ var d = document,
     cg4.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
     cg5.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
 
-    cf0.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
-    cf0.style.backgroundSize = 'cover';
-    cf1.style.background = 'url(img/shows/the-office.jpg) no-repeat';
-    cf1.style.backgroundSize = 'cover';
-    cf2.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
-    cf2.style.backgroundSize = 'cover';
-    cf3.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
-    cf3.style.backgroundSize = 'cover';
-    cf4.style.background = 'url(img/shows/the-office.jpg) no-repeat';
-    cf4.style.backgroundSize = 'cover';
-    cf5.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
-    cf5.style.backgroundSize = 'cover';
-
-    cn0.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
-    cn0.style.backgroundSize = 'cover';
-    cn1.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
-    cn1.style.backgroundSize = 'cover';
-    cn2.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
-    cn2.style.backgroundSize = 'cover';
-    cn3.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
-    cn3.style.backgroundSize = 'cover';
-    cn4.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
-    cn4.style.backgroundSize = 'cover';
-    cn5.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
-    cn5.style.backgroundSize = 'cover';
+    // cf0.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
+    // cf0.style.backgroundSize = 'cover';
+    // cf1.style.background = 'url(img/shows/the-office.jpg) no-repeat';
+    // cf1.style.backgroundSize = 'cover';
+    // cf2.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
+    // cf2.style.backgroundSize = 'cover';
+    // cf3.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
+    // cf3.style.backgroundSize = 'cover';
+    // cf4.style.background = 'url(img/shows/the-office.jpg) no-repeat';
+    // cf4.style.backgroundSize = 'cover';
+    // cf5.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
+    // cf5.style.backgroundSize = 'cover';
+    //
+    // cn0.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
+    // cn0.style.backgroundSize = 'cover';
+    // cn1.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
+    // cn1.style.backgroundSize = 'cover';
+    // cn2.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
+    // cn2.style.backgroundSize = 'cover';
+    // cn3.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
+    // cn3.style.backgroundSize = 'cover';
+    // cn4.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
+    // cn4.style.backgroundSize = 'cover';
+    // cn5.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
+    // cn5.style.backgroundSize = 'cover';
 
     seriesCategory.innerHTML = 'Trending';
     var seriestitle = 'The Handmaid\'s Tale';
@@ -69,19 +69,39 @@ TweenLite.set('.randomWheel', { transformOrigin: 'center center' });
 TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
 TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
-TweenLite.set(['.dislike', '.like'], { autoAlpha:.7 });
+TweenLite.set(['.dislike', '.like', '.heart-top'], { autoAlpha:.7 });
 TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 
-TweenLite.set([seriesCategory, '.randomWheel'], { autoAlpha:0 });
+// TweenLite.set([seriesCategory, '.randomWheel'], { autoAlpha:0 });
 
-var rotationSnap = 9;
+var rotationSnapWheel = 9;
 Draggable.create(".randomWheel", {
     type:"rotation",
     throwProps:true,
     snap:function(endValue) {
-        return Math.round(endValue / rotationSnap) * rotationSnap;
+        return Math.round(endValue / rotationSnapWheel) * rotationSnapWheel;
+    },
+    onClick:function() {
+      initSeries();
+    },
+    onDrag:function() {
+      TweenLite.to('.seriesInfo', .4, { autoAlpha:.05, y:10, ease:Expo.easeOut });
+    },
+    onDragEnd:function() {
+      TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
     }
+    // onThrowComplete:function() {
+    //   TweenLite.to(wheelArm, .2, { y:0, ease:Expo.easeOut });
+    // }
 });
+
+function initSeries() {
+  TweenLite.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut });
+  TweenLite.to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:.0 });
+  TweenLite.set('.episode-area', { display:'block' });
+  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut  });
+  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.04 });
+}
 
 Draggable.create("#wheelArm", {
     type:"y",
@@ -103,7 +123,6 @@ Draggable.create("#wheelArm", {
       if (endingY > 4){
         TweenLite.to(".randomWheel", 1.2, { rotation:'-=288', ease:Expo.easeOut });
       }
-      TweenLite.to(wheelArm, .2, { y:0, ease:Expo.easeOut });
     }
 });
 
@@ -117,16 +136,51 @@ Draggable.create(".category-list ul", {
   }
 });
 
+TweenLite.set('.episode-cards ul', { transformPerspective:400 });
+
+var rotationSnapEpisodeCards = 343;
 Draggable.create(".episode-cards ul", {
   type:"x",
   edgeResistance:0.65,
-  bounds:{minX:0, maxX:-1680},
+  bounds:{minX:0, maxX:-1715},
   throwProps:true,
+  snap:function(endValue) {
+      return Math.round(endValue / rotationSnapEpisodeCards) * rotationSnapEpisodeCards;
+  },
+  onPress:function() {
+    //record the starting values so we can compare them later...
+    startX = this.x;
+    startY = this.y;
+  },
   onDrag:function() {
-    que = this.endX;
-    console.log(que);
+    var xChange = this.x - startX,
+        yChange = this.y - startY,
+        ratio = Math.abs(xChange / yChange),
+        direction = [],
+        episodeDirection = getMomentaryDirection(this.target);
+    if ( episodeDirection == 'left' ){
+      TweenLite.to('.episode-cards ul', .6, { rotationY:1, ease:Expo.easeOut });
+    }
+    if ( episodeDirection == 'right' ){
+      TweenLite.to('.episode-cards ul', .6, { rotationY:-1, ease:Expo.easeOut });
+    }
+    console.log(episodeDirection);
+  },
+  onDragEnd:function() {
+    TweenLite.to('.episode-cards ul', .4, { rotationY:0, ease:Expo.easeOut });
   }
 });
+
+function getMomentaryDirection(target) {
+  var x = ThrowPropsPlugin.getVelocity(target, "x"),
+      y = ThrowPropsPlugin.getVelocity(target, "y"),
+      ratio = Math.abs(x / y),
+      direction = [];
+  if (ratio > 0.25) {
+    direction.push((x < 0) ? "left" : "right");
+  }
+  return direction.join("-");
+}
 
 function consoleScreenDimensions() {
     var x = screen.width;
