@@ -36,6 +36,10 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       .heart-top { position: relative; width: 21px; height: 18px; }
     }
     .seriesArea { position: relative; background: #FCF3FA; width: 100%; height: 100%;
+      .episode-cards { position: relative; padding: 24px 0 0 24px;
+        ul { width: 2100px; height: 186px; margin:0; padding: 0px; }
+        ul li { background: $cloud-grey; width: 327px; height: 186px; list-style: none; float: left; margin-right: 16px;  border-radius: 3px; box-shadow: 0 8px 8px 0 rgba(0,0,0,0.20); }
+      }
       .descriptions-trivia { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%; padding: 24px 24px 0;
         .decription-copy { font-size: 14px; color: #223041; }
       }

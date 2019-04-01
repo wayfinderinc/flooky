@@ -107,13 +107,24 @@ Draggable.create("#wheelArm", {
     }
 });
 
-Draggable.create("ul", {
+Draggable.create(".category-list ul", {
   type:"x",
   edgeResistance:0.65,
   bounds:{minX:0, maxX:-734},
   throwProps:true,
   onDrag:function() {
     //console.log(x);
+  }
+});
+
+Draggable.create(".episode-cards ul", {
+  type:"x",
+  edgeResistance:0.65,
+  bounds:{minX:0, maxX:-1680},
+  throwProps:true,
+  onDrag:function() {
+    que = this.endX;
+    console.log(que);
   }
 });
 
