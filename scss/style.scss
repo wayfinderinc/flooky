@@ -14,6 +14,7 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
   #gradientBg { position: absolute; width: 100%; height: 100%;
     #background1 { position: absolute; width: 100%; height: 100%; background: #5483E6; background-blend-mode: multiply; }
     #background2 { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%); background-blend-mode: lighten; opacity: .8; }
+    #sponsorBackground { display: none; position: absolute; width: 100%; height: 100%; }
   }
   #seriesCategory { position: relative; color:#fff; padding-top: 66px; padding-bottom: 40px; text-align: center; }
   .randomWheel { position: absolute; width: 4000px; height:4000px; left: 50%; margin-left: -2000px; top: 146px; }
@@ -35,9 +36,10 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       }
       .heart-top { position: relative; width: 21px; height: 18px; }
     }
-    .seriesArea { position: relative; background: #FCF3FA; width: 100%; height: 100%;
+    .seriesArea { position: relative; width: 100%; height: 100%;
+      .series-area-bg { position: absolute; background: #FCF3FA; width: 100%; height: 100%; }
       .episode-cards { position: relative; padding: 24px 0 0 24px;
-        ul { width: 2100px; height: 186px; margin:0; padding: 0px; }
+        ul { width: 2401px; height: 186px; margin:0; padding: 0px; }
         ul li { background: $cloud-grey; width: 327px; height: 186px; list-style: none; float: left; margin-right: 16px;  border-radius: 3px; box-shadow: 0 8px 8px 0 rgba(0,0,0,0.20); }
       }
       .descriptions-trivia { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%; padding: 24px 24px 0;

@@ -54,8 +54,11 @@ var d = document,
     // cn5.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
     // cn5.style.backgroundSize = 'cover';
 
+    // card1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
+    // card1.style.backgroundSize = 'cover';
+
     seriesCategory.innerHTML = 'Trending';
-    var seriestitle = 'The Handmaid\'s Tale';
+    var seriestitle = 'Russian Doll';
     seriesTitle.innerHTML = seriestitle;
     seriesTitleTop.innerHTML = seriestitle;
     episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
@@ -85,10 +88,10 @@ Draggable.create(".randomWheel", {
       initSeries();
     },
     onDrag:function() {
-      TweenLite.to('.seriesInfo', .4, { autoAlpha:.05, y:10, ease:Expo.easeOut });
+      TweenLite.to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut });
     },
     onDragEnd:function() {
-      TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
+      TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
     }
     // onThrowComplete:function() {
     //   TweenLite.to(wheelArm, .2, { y:0, ease:Expo.easeOut });
@@ -109,19 +112,25 @@ Draggable.create("#wheelArm", {
     bounds:{minY:-0, maxY:24},
     lockAxis:true,
     onClick:function() {
-      TweenLite.to(".randomWheel", 1.2, { rotation:'-=288', ease:Expo.easeOut });
+      TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut });
+      TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
+        TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
+      } });
     },
     onDrag:function(){
       reverseWheel++;
       if ( reverseWheel == 1 ){
         TweenLite.to(".randomWheel", .2, { rotation:'+=9', ease:Power0.easeNone });
+        TweenLite.to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut });
       }
     },
     onDragEnd:function() {
       reverseWheel = 0;
       var endingY = this.endY;
       if (endingY > 4){
-        TweenLite.to(".randomWheel", 1.2, { rotation:'-=288', ease:Expo.easeOut });
+        TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
+        TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
+        TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut, onStart:initSponsor });
       }
     }
 });
@@ -142,7 +151,7 @@ var rotationSnapEpisodeCards = 343;
 Draggable.create(".episode-cards ul", {
   type:"x",
   edgeResistance:0.65,
-  bounds:{minX:0, maxX:-1715},
+  bounds:{minX:0, maxX:-2058},
   throwProps:true,
   snap:function(endValue) {
       return Math.round(endValue / rotationSnapEpisodeCards) * rotationSnapEpisodeCards;
@@ -180,6 +189,47 @@ function getMomentaryDirection(target) {
     direction.push((x < 0) ? "left" : "right");
   }
   return direction.join("-");
+}
+
+function setGOT() {
+  seriestitle = 'Game of Thrones';
+  seriesTitle.innerHTML = seriestitle;
+  seriesTitleTop.innerHTML = seriestitle;
+  sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
+  sponsorBackground.style.backgroundSize = 'cover';
+  sponsorBackground.style.backgroundPosition = 'center center';
+  TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
+  TweenLite.set(['.decription-copy', '#episodeTitle', '.imdb-episode-info', '.episode-description'], { color:'#fff' });
+  TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
+  TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
+  var ec0 = document.getElementById("episodeCards").children[0],
+  ec1 = document.getElementById("episodeCards").children[1],
+  ec2 = document.getElementById("episodeCards").children[2],
+  ec3 = document.getElementById("episodeCards").children[3],
+  ec4 = document.getElementById("episodeCards").children[4],
+  ec5 = document.getElementById("episodeCards").children[5];
+  ec6 = document.getElementById("episodeCards").children[6];
+  ec0.style.background = 'url(img/episodes/got-s7-e1.jpg) no-repeat';
+  ec0.style.backgroundSize = 'cover';
+  ec1.style.background = 'url(img/episodes/got-s7-e2.jpg) no-repeat';
+  ec1.style.backgroundSize = 'cover';
+  ec2.style.background = 'url(img/episodes/got-s7-e3.jpg) no-repeat';
+  ec2.style.backgroundSize = 'cover';
+  ec3.style.background = 'url(img/episodes/got-s7-e4.jpg) no-repeat';
+  ec3.style.backgroundSize = 'cover';
+  ec4.style.background = 'url(img/episodes/got-s7-e5.jpg) no-repeat';
+  ec4.style.backgroundSize = 'cover';
+  ec5.style.background = 'url(img/episodes/got-s7-e6.jpg) no-repeat';
+  ec5.style.backgroundSize = 'cover';
+  ec6.style.background = 'url(img/episodes/got-s7-e7.jpg) no-repeat';
+  ec6.style.backgroundSize = 'cover';
+}
+
+function initSponsor() {
+  setGOT();
+  var sponsorTl = new TimelineMax({ delay:.2 });
+  sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
+  TweenLite.to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 });
 }
 
 function consoleScreenDimensions() {
