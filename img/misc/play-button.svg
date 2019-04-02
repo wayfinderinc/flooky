@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="60px" viewBox="0 0 41 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>media-play-symbol</title>
+    <desc>Created with Sketch.</desc>
+    <g id="GOT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.900000036">
+        <g id="02.2---GOT-Random-Screen---Episode-Description" transform="translate(-199.000000, -302.000000)" fill="#FFFFFF">
+            <g id="random-generator" transform="translate(32.000000, 60.000000)">
+                <g id="media-play-symbol" transform="translate(167.000000, 242.000000)">
+                    <path d="M1.49246097,0.415187166 C1.94650929,0.138609626 2.45466543,0 2.96358364,0 C3.47113011,0 3.97913383,0.138609626 4.43516357,0.415187166 L39.5086059,27.2387166 C40.4174647,27.7913904 40.9803383,28.8145989 40.9803383,29.9209091 C40.9803383,31.0270588 40.4189888,32.050107 39.5086059,32.602139 L4.43516357,59.4267914 C3.52493309,59.9788235 2.40284387,59.9788235 1.49322305,59.4267914 C0.582840149,58.8728342 0.0208810409,57.8493048 0.0208810409,56.7437968 L0.0208810409,3.09705882 C0.0208810409,1.99139037 0.581925651,0.968342246 1.49246097,0.415187166 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

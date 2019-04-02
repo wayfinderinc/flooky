@@ -145,7 +145,7 @@ Draggable.create(".category-list ul", {
   }
 });
 
-TweenLite.set('.episode-cards ul', { transformPerspective:400 });
+// TweenLite.set('.episode-cards ul', { transformPerspective:400 });
 
 var rotationSnapEpisodeCards = 343;
 Draggable.create(".episode-cards ul", {
@@ -168,15 +168,15 @@ Draggable.create(".episode-cards ul", {
         direction = [],
         episodeDirection = getMomentaryDirection(this.target);
     if ( episodeDirection == 'left' ){
-      TweenLite.to('.episode-cards ul', .6, { rotationY:1, ease:Expo.easeOut });
+      // TweenLite.to('.episode-cards ul', .6, { rotationY:1, ease:Expo.easeOut });
     }
     if ( episodeDirection == 'right' ){
-      TweenLite.to('.episode-cards ul', .6, { rotationY:-1, ease:Expo.easeOut });
+      // TweenLite.to('.episode-cards ul', .6, { rotationY:-1, ease:Expo.easeOut });
     }
     console.log(episodeDirection);
   },
   onDragEnd:function() {
-    TweenLite.to('.episode-cards ul', .4, { rotationY:0, ease:Expo.easeOut });
+    // TweenLite.to('.episode-cards ul', .4, { rotationY:0, ease:Expo.easeOut });
   }
 });
 
@@ -198,6 +198,10 @@ function setGOT() {
   sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
   sponsorBackground.style.backgroundSize = 'cover';
   sponsorBackground.style.backgroundPosition = 'center center';
+  quickLookBackground.style.background = 'url(img/background/got-flipped.jpg) no-repeat';
+  quickLookBackground.style.backgroundSize = 'cover';
+  quickLookBackground.style.backgroundPosition = 'center center';
+  quickLookBackground.style.borderTop = '2px solid #2E3C4F';
   TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
   TweenLite.set(['.decription-copy', '#episodeTitle', '.imdb-episode-info', '.episode-description'], { color:'#fff' });
   TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
@@ -228,8 +232,11 @@ function setGOT() {
 function initSponsor() {
   setGOT();
   var sponsorTl = new TimelineMax({ delay:.2 });
-  sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
-  TweenLite.to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 });
+  sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut })
+    .fromTo('#quickLookBackground', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 0)
+    .to('.category-type h3', .6, { color:'#fff', ease:Expo.easeOut }, 0)
+    .to('#wheelArmBg', .8, { background:'#2BA8ED', boxShadow:'4px 4px 8px 0 #2E3C4F' }, 0)
+    .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 0);
 }
 
 function consoleScreenDimensions() {
