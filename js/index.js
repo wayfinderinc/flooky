@@ -145,12 +145,12 @@ Draggable.create(".category-list ul", {
   }
 });
 
-// TweenLite.set('.episode-cards ul', { transformPerspective:400 });
+TweenLite.set('.episode-cards ul li', { transformPerspective:400 });
 
 var rotationSnapEpisodeCards = 343;
 Draggable.create(".episode-cards ul", {
   type:"x",
-  edgeResistance:0.65,
+  edgeResistance:0.9,
   bounds:{minX:0, maxX:-2058},
   throwProps:true,
   snap:function(endValue) {
@@ -168,15 +168,15 @@ Draggable.create(".episode-cards ul", {
         direction = [],
         episodeDirection = getMomentaryDirection(this.target);
     if ( episodeDirection == 'left' ){
-      // TweenLite.to('.episode-cards ul', .6, { rotationY:1, ease:Expo.easeOut });
+      TweenLite.to('.episode-cards ul li', .6, { transformOrigin:'left center', rotationY:6, ease:Expo.easeOut });
     }
     if ( episodeDirection == 'right' ){
-      // TweenLite.to('.episode-cards ul', .6, { rotationY:-1, ease:Expo.easeOut });
+      TweenLite.to('.episode-cards ul li', .6, { transformOrigin:'right center', rotationY:-6, ease:Expo.easeOut });
     }
     console.log(episodeDirection);
   },
   onDragEnd:function() {
-    // TweenLite.to('.episode-cards ul', .4, { rotationY:0, ease:Expo.easeOut });
+    TweenLite.to('.episode-cards ul li', .4, { rotationY:0, ease:Expo.easeOut });
   }
 });
 
