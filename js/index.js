@@ -159,6 +159,9 @@ function setGOT() {
   seriestitle = 'Game of Thrones';
   seriesTitle.innerHTML = seriestitle;
   seriesTitleTop.innerHTML = seriestitle;
+  episodeTitle.innerHTML = 'DragonStone';
+  imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
+  episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
   sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
   sponsorBackground.style.backgroundSize = 'cover';
   sponsorBackground.style.backgroundPosition = 'center center';
@@ -201,6 +204,18 @@ function initSponsor() {
     .to('.category-type h3', .6, { color:'#fff', ease:Expo.easeOut }, 0)
     .to('#wheelArmBg', .8, { background:'#2BA8ED', boxShadow:'4px 4px 8px 0 #2E3C4F' }, 0)
     .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 0);
+}
+
+function showEpisodeDescription() {
+  TweenLite.to([dt1, dt2], .6, { autoAlpha:.65, ease:Expo.easeOut });
+  TweenLite.to(dt0, .6, { autoAlpha:1, ease:Expo.easeOut });
+  TweenLite.to('.bar-bg .bar', .6, { x:0, width:'138px', ease:Expo.easeOut });
+}
+
+function showSeriesDescription() {
+  TweenLite.to([dt0, dt2], .6, { autoAlpha:.65, ease:Expo.easeOut });
+  TweenLite.to(dt1, .6, { autoAlpha:1, ease:Expo.easeOut });
+  TweenLite.to('.bar-bg .bar', .6, { x:151, width:'124px', ease:Expo.easeOut });
 }
 
 function consoleScreenDimensions() {
