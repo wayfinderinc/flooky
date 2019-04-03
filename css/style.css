@@ -269,6 +269,13 @@ h3 {
     height: 18px;
     top: 24px;
     left: 24px; }
+  #topNavigation #backCTA {
+    display: none;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 26px;
+    left: 24px; }
   #topNavigation #hambugerMenu {
     position: absolute;
     width: 24px;

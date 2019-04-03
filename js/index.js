@@ -148,11 +148,19 @@ function setCopy() {
 }
 
 function initSeries() {
-  TweenLite.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut });
-  TweenLite.to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:.0 });
-  TweenLite.set('.episode-area', { display:'block' });
-  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut  });
-  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.04 });
+  initBackButton();
+  seriesTransition = new TimelineMax();
+  seriesTransition.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut })
+    .to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:.0 }, 0)
+    .set('.episode-area', { display:'block' }, 0)
+    .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
+    .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
+}
+
+function initFlookyRandomScreen() {
+  seriesTransition.reverse();
+  TweenLite.to('#backCTA', .4, { autoAlpha:0, x:-24, ease:Expo.easeInOut });
+  TweenLite.to('#seriesSearch', .6, { autoAlpha:1, scale:1, ease:Expo.easeInOut });
 }
 
 function setGOT() {
@@ -219,11 +227,16 @@ function showSeriesDescription() {
 }
 
 function consoleScreenDimensions() {
-    var x = screen.width;
-    var y = screen.height;
-    //widthandheight.innerHTML = 'screen with is '+x+' and screen height is '+y;
+  var x = screen.width;
+  var y = screen.height;
+  //widthandheight.innerHTML = 'screen with is '+x+' and screen height is '+y;
 }
 
 //consoleScreenDimensions();
+
+function initBackButton() {
+  TweenLite.to('#seriesSearch', .4, { autoAlpha:0, scale:.8, ease:Expo.easeInOut });
+  TweenLite.fromTo('#backCTA', .6, { display:'block', autoAlpha:0, x:24 }, { autoAlpha:1, x:0, delay:0, ease:Expo.easeInOut });
+}
 
 setCopy();

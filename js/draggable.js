@@ -19,6 +19,8 @@ Draggable.create(".randomWheel", {
     },
     onDragEnd:function() {
       TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
+      endingRotation = this.endRotation;
+      editSeriesTT();
     }
 });
 
@@ -101,4 +103,8 @@ function getMomentaryDirection(target) {
     direction.push((x < 0) ? "left" : "right");
   }
   return direction.join("-");
+}
+
+function editSeriesTT() {
+  console.log(endingRotation);
 }
