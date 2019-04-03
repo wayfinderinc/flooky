@@ -32,6 +32,7 @@ Draggable.create("#wheelArm", {
     onClick:function() {
       TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut });
       TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
+        editSeriesTT();
         TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
       } });
     },
@@ -49,6 +50,7 @@ Draggable.create("#wheelArm", {
         TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
         TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
         TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut, onStart:initSponsor });
+        editSeriesTT();
       }
     }
 });
@@ -105,6 +107,52 @@ function getMomentaryDirection(target) {
   return direction.join("-");
 }
 
+function locateSeries(wheelLocation) {
+  if ( wheelLocation == '-9' ){ seriestitle = 'Ozark'; }
+  if ( wheelLocation == '-18' ){ seriestitle = 'The OA'; }
+  if ( wheelLocation == '-27' ){ seriestitle = 'Hanna'; }
+  if ( wheelLocation == '-36' ){ seriestitle = 'The Handmaid\'s Tale'; }
+  if ( wheelLocation == '-45' ){ seriestitle = 'The Magicians'; }
+  if ( wheelLocation == '-54' ){ seriestitle = 'Friends'; }
+  if ( wheelLocation == '-63' ){ seriestitle = 'The Umbrella Academy'; }
+  if ( wheelLocation == '-72' ){ seriestitle = 'Better Call Saul'; }
+  if ( wheelLocation == '-81' ){ seriestitle = 'The Walking Dead'; }
+  if ( wheelLocation == '-90' ){ seriestitle = 'Chilling Adventures of Sabrina'; }
+  if ( wheelLocation == '-99' ){ seriestitle = 'The Crown'; }
+  if ( wheelLocation == '-108' ){ seriestitle = 'Arrested Development'; }
+  if ( wheelLocation == '-117' ){ seriestitle = 'This is Us'; }
+  if ( wheelLocation == '-126' ){ seriestitle = 'True Detective'; }
+  if ( wheelLocation == '-135' ){ seriestitle = 'Sex Education'; }
+  if ( wheelLocation == '-144' ){ seriestitle = 'Smilf'; }
+  if ( wheelLocation == '-153' ){ seriestitle = 'Stranger Things'; }
+  if ( wheelLocation == '-162' ){ seriestitle = 'The Good Place'; }
+  if ( wheelLocation == '-171' ){ seriestitle = 'Star Trek Discovery'; }
+  if ( wheelLocation == '-180' ){ seriestitle = 'Russian Doll'; }
+  if ( wheelLocation == '-189' ){ seriestitle = 'The Crown'; }
+  if ( wheelLocation == '-198' ){ seriestitle = 'The OA'; }
+  if ( wheelLocation == '-207' ){ seriestitle = 'Arrested Development'; }
+  if ( wheelLocation == '-216' ){ seriestitle = 'The Handmaid\'s Tale'; }
+  if ( wheelLocation == '-225' ){ seriestitle = 'The Magicians'; }
+  if ( wheelLocation == '-234' ){ seriestitle = 'Friends'; }
+  if ( wheelLocation == '-243' ){ seriestitle = 'The Umbrella Academy'; }
+  if ( wheelLocation == '-252' ){ seriestitle = 'Ozark'; }
+  if ( wheelLocation == '-261' ){ seriestitle = 'The Good Place'; }
+  if ( wheelLocation == '-270' ){ seriestitle = 'Hanna'; }
+  if ( wheelLocation == '-279' ){ seriestitle = 'Better Call Saul'; }
+  if ( wheelLocation == '-288' ){ seriestitle = 'Game of Thrones'; }
+  if ( wheelLocation == '-297' ){ seriestitle = 'The Walking Dead'; }
+  if ( wheelLocation == '-306' ){ seriestitle = 'This is Us'; }
+  if ( wheelLocation == '-315' ){ seriestitle = 'True Detective'; }
+  if ( wheelLocation == '-324' ){ seriestitle = 'Sex Education'; }
+  if ( wheelLocation == '-333' ){ seriestitle = 'Smilf'; }
+  if ( wheelLocation == '-342' ){ seriestitle = 'Stranger Things'; }
+  if ( wheelLocation == '-351' ){ seriestitle = 'Chilling Adventures of Sabrina'; }
+}
+
 function editSeriesTT() {
+  wheelLocation = endingRotation;
+  locateSeries(wheelLocation);
+  seriesTitle.innerHTML = seriestitle;
+  seriesTitleTop.innerHTML = seriestitle;
   console.log(endingRotation);
 }
