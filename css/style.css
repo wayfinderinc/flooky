@@ -67,6 +67,13 @@ h3 {
     left: 50%;
     margin-left: -2000px;
     top: 146px; }
+    #randomScreen .randomWheel .series-card {
+      position: absolute;
+      background: #fff;
+      width: 231px;
+      height: 346.5px;
+      border-radius: 3px;
+      box-shadow: 0 16px 8px -8px rgba(0, 0, 0, 0.4); }
   #randomScreen .seriesInfo {
     display: flex;
     flex-direction: column;

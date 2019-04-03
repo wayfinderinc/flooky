@@ -57,6 +57,21 @@ var d = document,
     // card1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
     // card1.style.backgroundSize = 'cover';
 
+    TweenLite.set('.wheel-top-right', { x:1884 });
+    TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
+    TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });
+    TweenLite.set('.wheel-top-left', { x:0, y:2116, transformOrigin:'bottom left', rotation:270 });
+    TweenLite.set('.seriesCard1', { x:0 });
+    TweenLite.set('.seriesCard2', { x:286, y:22, rotation:9 });
+    TweenLite.set('.seriesCard3', { x:565, y:89, rotation:18 });
+    TweenLite.set('.seriesCard4', { x:830, y:199, rotation:27 });
+    TweenLite.set('.seriesCard5', { x:1074, y:349, rotation:36 });
+    TweenLite.set('.seriesCard6', { x:1292, y:535, rotation:45 });
+    TweenLite.set('.seriesCard7', { x:1478, y:753, rotation:54 });
+    TweenLite.set('.seriesCard8', { x:1628, y:998, rotation:63 });
+    TweenLite.set('.seriesCard9', { x:1737, y:1262, rotation:72 });
+    TweenLite.set('.seriesCard10', { x:1804, y:1541, rotation:81 });
+
     seriesCategory.innerHTML = 'Trending';
     var seriestitle = 'Russian Doll';
     seriesTitle.innerHTML = seriestitle;
