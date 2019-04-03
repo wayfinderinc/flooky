@@ -11,12 +11,7 @@ var d = document,
   // cf3 = document.getElementById("catFeatured").children[3],
   // cf4 = document.getElementById("catFeatured").children[4],
   // cf5 = document.getElementById("catFeatured").children[5],
-  // cn0 = document.getElementById("catNetflix").children[0],
-  // cn1 = document.getElementById("catNetflix").children[1],
-  // cn2 = document.getElementById("catNetflix").children[2],
-  // cn3 = document.getElementById("catNetflix").children[3],
-  // cn4 = document.getElementById("catNetflix").children[4],
-  // cn5 = document.getElementById("catNetflix").children[5],
+
   dt0 = document.getElementById("descriptionTrivia").children[0],
   dt1 = document.getElementById("descriptionTrivia").children[1],
   dt2 = document.getElementById("descriptionTrivia").children[2];
@@ -40,78 +35,39 @@ var d = document,
     // cf4.style.backgroundSize = 'cover';
     // cf5.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
     // cf5.style.backgroundSize = 'cover';
-    //
-    // cn0.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
-    // cn0.style.backgroundSize = 'cover';
-    // cn1.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
-    // cn1.style.backgroundSize = 'cover';
-    // cn2.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
-    // cn2.style.backgroundSize = 'cover';
-    // cn3.style.background = 'url(img/shows/oitnb-2.jpg) no-repeat';
-    // cn3.style.backgroundSize = 'cover';
-    // cn4.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
-    // cn4.style.backgroundSize = 'cover';
-    // cn5.style.background = 'url(img/shows/penny-dreadful.jpg) no-repeat';
-    // cn5.style.backgroundSize = 'cover';
 
-    // card1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
-    // card1.style.backgroundSize = 'cover';
-
-    TweenLite.set('.wheel-top-right', { x:1884 });
-    TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
-    TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });
-    TweenLite.set('.wheel-top-left', { x:0, y:2116, transformOrigin:'bottom left', rotation:270 });
-    TweenLite.set('.seriesCard1', { x:0 });
-    TweenLite.set('.seriesCard2', { x:286, y:22, rotation:9 });
-    TweenLite.set('.seriesCard3', { x:565, y:89, rotation:18 });
-    TweenLite.set('.seriesCard4', { x:830, y:199, rotation:27 });
-    TweenLite.set('.seriesCard5', { x:1074, y:349, rotation:36 });
-    TweenLite.set('.seriesCard6', { x:1292, y:535, rotation:45 });
-    TweenLite.set('.seriesCard7', { x:1478, y:753, rotation:54 });
-    TweenLite.set('.seriesCard8', { x:1628, y:998, rotation:63 });
-    TweenLite.set('.seriesCard9', { x:1737, y:1262, rotation:72 });
-    TweenLite.set('.seriesCard10', { x:1804, y:1541, rotation:81 });
-
-    seriesCategory.innerHTML = 'Trending';
-    var seriestitle = 'Russian Doll';
-    seriesTitle.innerHTML = seriestitle;
-    seriesTitleTop.innerHTML = seriestitle;
-    episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
-    imdbEpisdeInfo.innerHTML = 'Season 1 Episode 6 &nbsp;&bull;&nbsp;  Oct 26, 2018 &nbsp;&bull;&nbsp; 50min';
-    episodeDescription.innerHTML = 'Harvey, Roz, and Sisue explore a mysterious force of evil. Sabrina digs deeper in Ms. Wardwell\'s intentions. Hilda pursues a new beginning.';
-
-var reverseWheel = 0;
-
-// TweenLite.set(flookyApp, { left:'50%', xPercent:-50 });
-TweenLite.set('.randomWheel', { transformOrigin: 'center center' });
+TweenLite.set('.wheel-top-right', { x:1884 });
+TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
+TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });
+TweenLite.set('.wheel-top-left', { x:0, y:2116, transformOrigin:'bottom left', rotation:270 });
+TweenLite.set('.seriesCard1', { x:0 });
+TweenLite.set('.seriesCard2', { x:286, y:22, rotation:9 });
+TweenLite.set('.seriesCard3', { x:565, y:89, rotation:18 });
+TweenLite.set('.seriesCard4', { x:830, y:199, rotation:27 });
+TweenLite.set('.seriesCard5', { x:1074, y:349, rotation:36 });
+TweenLite.set('.seriesCard6', { x:1292, y:535, rotation:45 });
+TweenLite.set('.seriesCard7', { x:1478, y:753, rotation:54 });
+TweenLite.set('.seriesCard8', { x:1628, y:998, rotation:63 });
+TweenLite.set('.seriesCard9', { x:1737, y:1262, rotation:72 });
+TweenLite.set('.seriesCard10', { x:1804, y:1541, rotation:81 });
 TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
 TweenLite.set(wheelArmBg, { rotation:45 });
 TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 TweenLite.set(['.dislike', '.like', '.heart-top'], { autoAlpha:.7 });
 TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 
-// TweenLite.set([seriesCategory, '.randomWheel'], { autoAlpha:0 });
+series1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
+series1.style.backgroundSize = 'cover';
 
-var rotationSnapWheel = 9;
-Draggable.create(".randomWheel", {
-    type:"rotation",
-    throwProps:true,
-    snap:function(endValue) {
-        return Math.round(endValue / rotationSnapWheel) * rotationSnapWheel;
-    },
-    onClick:function() {
-      initSeries();
-    },
-    onDrag:function() {
-      TweenLite.to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut });
-    },
-    onDragEnd:function() {
-      TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
-    }
-    // onThrowComplete:function() {
-    //   TweenLite.to(wheelArm, .2, { y:0, ease:Expo.easeOut });
-    // }
-});
+function setCopy() {
+  seriesCategory.innerHTML = 'Trending';
+  var seriestitle = 'Russian Doll';
+  seriesTitle.innerHTML = seriestitle;
+  seriesTitleTop.innerHTML = seriestitle;
+  episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
+  imdbEpisdeInfo.innerHTML = 'Season 1 Episode 6 &nbsp;&bull;&nbsp;  Oct 26, 2018 &nbsp;&bull;&nbsp; 50min';
+  episodeDescription.innerHTML = 'Harvey, Roz, and Sisue explore a mysterious force of evil. Sabrina digs deeper in Ms. Wardwell\'s intentions. Hilda pursues a new beginning.';
+}
 
 function initSeries() {
   TweenLite.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut });
@@ -119,91 +75,6 @@ function initSeries() {
   TweenLite.set('.episode-area', { display:'block' });
   TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut  });
   TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.04 });
-}
-
-Draggable.create("#wheelArm", {
-    type:"y",
-    edgeResistance:0.9,
-    bounds:{minY:-0, maxY:24},
-    lockAxis:true,
-    onClick:function() {
-      TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut });
-      TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
-        TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
-      } });
-    },
-    onDrag:function(){
-      reverseWheel++;
-      if ( reverseWheel == 1 ){
-        TweenLite.to(".randomWheel", .2, { rotation:'+=9', ease:Power0.easeNone });
-        TweenLite.to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut });
-      }
-    },
-    onDragEnd:function() {
-      reverseWheel = 0;
-      var endingY = this.endY;
-      if (endingY > 4){
-        TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
-        TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
-        TweenLite.to(".randomWheel", .8, { rotation:'-=288', ease:Expo.easeOut, onStart:initSponsor });
-      }
-    }
-});
-
-Draggable.create(".category-list ul", {
-  type:"x",
-  edgeResistance:0.65,
-  bounds:{minX:0, maxX:-734},
-  throwProps:true,
-  onDrag:function() {
-    //console.log(x);
-  }
-});
-
-TweenLite.set('.episode-cards ul li', { transformPerspective:400 });
-
-var rotationSnapEpisodeCards = 343;
-Draggable.create(".episode-cards ul", {
-  type:"x",
-  edgeResistance:0.9,
-  bounds:{minX:0, maxX:-2058},
-  throwProps:true,
-  snap:function(endValue) {
-      return Math.round(endValue / rotationSnapEpisodeCards) * rotationSnapEpisodeCards;
-  },
-  onPress:function() {
-    //record the starting values so we can compare them later...
-    startX = this.x;
-    startY = this.y;
-  },
-  onDrag:function() {
-    var xChange = this.x - startX,
-        yChange = this.y - startY,
-        ratio = Math.abs(xChange / yChange),
-        direction = [],
-        episodeDirection = getMomentaryDirection(this.target);
-    if ( episodeDirection == 'left' ){
-      TweenLite.to('.episode-cards ul li', .6, { transformOrigin:'left center', rotationY:6, ease:Expo.easeOut });
-    }
-    if ( episodeDirection == 'right' ){
-      TweenLite.to('.episode-cards ul li', .6, { transformOrigin:'right center', rotationY:-6, ease:Expo.easeOut });
-    }
-    console.log(episodeDirection);
-  },
-  onDragEnd:function() {
-    TweenLite.to('.episode-cards ul li', .4, { rotationY:0, ease:Expo.easeOut });
-  }
-});
-
-function getMomentaryDirection(target) {
-  var x = ThrowPropsPlugin.getVelocity(target, "x"),
-      y = ThrowPropsPlugin.getVelocity(target, "y"),
-      ratio = Math.abs(x / y),
-      direction = [];
-  if (ratio > 0.25) {
-    direction.push((x < 0) ? "left" : "right");
-  }
-  return direction.join("-");
 }
 
 function setGOT() {
@@ -260,4 +131,6 @@ function consoleScreenDimensions() {
     //widthandheight.innerHTML = 'screen with is '+x+' and screen height is '+y;
 }
 
-consoleScreenDimensions();
+//consoleScreenDimensions();
+
+setCopy();
