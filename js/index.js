@@ -150,6 +150,9 @@ function setCopy() {
   episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
   imdbEpisdeInfo.innerHTML = 'Season 1 Episode 6 &nbsp;&bull;&nbsp;  Oct 26, 2018 &nbsp;&bull;&nbsp; 50min';
   episodeDescription.innerHTML = 'Harvey, Roz, and Sisue explore a mysterious force of evil. Sabrina digs deeper in Ms. Wardwell\'s intentions. Hilda pursues a new beginning.';
+  seriesOverview.innerHTML = 'Overview';
+  imdbSeriesInfo.innerHTML = 'TV-MA &nbsp;&bull;&nbsp; Action, Adventure, Drama &nbsp;&bull;&nbsp; 2011-2019';
+  seriesDescription.innerHTML = 'Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil returns after being dormant for thousands of years.';
 }
 
 function initSeries() {
@@ -231,7 +234,7 @@ function showSeriesDescription() {
 function likeSeries() {
   likeTl = new TimelineMax();
   likeTl.to('.dislike', .4, { autoAlpha:0 })
-    .to('.like', .2, { transformOrigin:'top right', scaleX:.8, x:4, ease:Expo.easeOut }, 0)
+    .to('.like', .2, { transformOrigin:'top right', scaleX:.8, x:5, ease:Expo.easeOut }, 0)
     .to('.like', .4, { scaleX:1, x:-23, ease:Expo.easeOut, autoAlpha:1 }, .2)
     .to('.heart-top', .4, { autoAlpha:1 }, .2)
     .to('.like', .5, { transformOrigin:'center center', rotationY:360, ease:Expo.easeOut }, .55)
