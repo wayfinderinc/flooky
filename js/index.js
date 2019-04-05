@@ -164,9 +164,6 @@ function initFlookyRandomScreen() {
 }
 
 function setGOT() {
-  seriestitle = 'Game of Thrones';
-  seriesTitle.innerHTML = seriestitle;
-  seriesTitleTop.innerHTML = seriestitle;
   episodeTitle.innerHTML = 'DragonStone';
   imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
   episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
@@ -215,15 +212,32 @@ function initSponsor() {
 }
 
 function showEpisodeDescription() {
-  TweenLite.to([dt1, dt2], .6, { autoAlpha:.65, ease:Expo.easeOut });
-  TweenLite.to(dt0, .6, { autoAlpha:1, ease:Expo.easeOut });
-  TweenLite.to('.bar-bg .bar', .6, { x:0, width:'138px', ease:Expo.easeOut });
+  TweenLite.to([dt1, dt2], .4, { autoAlpha:.65, ease:Expo.easeOut });
+  TweenLite.to(dt0, .4, { autoAlpha:1, ease:Expo.easeOut });
+  TweenLite.to('.bar-bg .bar', .4, { x:0, width:'138px', ease:Expo.easeOut });
 }
 
 function showSeriesDescription() {
-  TweenLite.to([dt0, dt2], .6, { autoAlpha:.65, ease:Expo.easeOut });
-  TweenLite.to(dt1, .6, { autoAlpha:1, ease:Expo.easeOut });
-  TweenLite.to('.bar-bg .bar', .6, { x:151, width:'124px', ease:Expo.easeOut });
+  TweenLite.to([dt0, dt2], .4, { autoAlpha:.65, ease:Expo.easeOut });
+  TweenLite.to(dt1, .4, { autoAlpha:1, ease:Expo.easeOut });
+  TweenLite.to('.bar-bg .bar', .4, { x:151, width:'124px', ease:Expo.easeOut });
+}
+
+function likeSeries() {
+  likeTl = new TimelineMax();
+  likeTl.to('.dislike', .4, { autoAlpha:0 })
+    .to('.like', .2, { transformOrigin:'top right', scaleX:.8, x:4, ease:Expo.easeOut }, 0)
+    .to('.like', .4, { scaleX:1, x:-23, ease:Expo.easeOut, autoAlpha:1 }, .2)
+    .to('.heart-top', .4, { autoAlpha:1 }, .2)
+    .to('.like', .6, { transformOrigin:'center center', rotationY:360, ease:Expo.easeOut }, .55)
+    .to('.heart-like-fill', .3, { fill:'#F54242', ease:Expo.easeOut }, .6)
+    // .heart-like-fill{fill:#F54242;stroke:#FFFFFF;stroke-width:1.5;}
+    ;
+}
+
+function initBackButton() {
+  TweenLite.to('#seriesSearch', .4, { autoAlpha:0, scale:.8, ease:Expo.easeInOut });
+  TweenLite.fromTo('#backCTA', .6, { display:'block', autoAlpha:0, x:24 }, { autoAlpha:1, x:0, delay:0, ease:Expo.easeInOut });
 }
 
 function consoleScreenDimensions() {
@@ -233,10 +247,5 @@ function consoleScreenDimensions() {
 }
 
 //consoleScreenDimensions();
-
-function initBackButton() {
-  TweenLite.to('#seriesSearch', .4, { autoAlpha:0, scale:.8, ease:Expo.easeInOut });
-  TweenLite.fromTo('#backCTA', .6, { display:'block', autoAlpha:0, x:24 }, { autoAlpha:1, x:0, delay:0, ease:Expo.easeInOut });
-}
 
 setCopy();

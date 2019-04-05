@@ -5,25 +5,6 @@ TweenLite.set('.episode-cards ul li', { transformPerspective:400 });
 var rotationSnapWheel = 9;
 var rotationSnapEpisodeCards = 343;
 
-// Draggable.create(".randomWheel", {
-//     type:"rotation",
-//     throwProps:true,
-//     snap:function(endValue) {
-//         return Math.round(endValue / rotationSnapWheel) * rotationSnapWheel;
-//     },
-//     onClick:function() {
-//       initSeries();
-//     },
-//     onDrag:function() {
-//       TweenLite.to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut });
-//     },
-//     onDragEnd:function() {
-//       TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
-//       endingRotation = this.endRotation;
-//       editSeriesTT();
-//     }
-// });
-
 var dragWheel = new Draggable(".randomWheel", {
     type:"rotation",
     throwProps:true,
@@ -38,7 +19,7 @@ var dragWheel = new Draggable(".randomWheel", {
     },
     onDragEnd:function() {
       TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
-      endingRotation = this.endRotation;
+      //endingRotation = this.endRotation;
       editSeriesTT();
     }
 });
@@ -126,6 +107,14 @@ function getMomentaryDirection(target) {
   return direction.join("-");
 }
 
+function editSeriesTT() {
+  wheelLocation = dragWheel.endRotation;
+  locateSeries(wheelLocation);
+  seriesTitle.innerHTML = seriestitle;
+  seriesTitleTop.innerHTML = seriestitle;
+  console.log(wheelLocation);
+}
+
 function locateSeries(wheelLocation) {
   if ( wheelLocation == '-9' || wheelLocation == '351' ){ seriestitle = 'Ozark'; }
   if ( wheelLocation == '-18' || wheelLocation == '342' ){ seriestitle = 'The OA'; }
@@ -158,7 +147,7 @@ function locateSeries(wheelLocation) {
   if ( wheelLocation == '-261' || wheelLocation == '99' ){ seriestitle = 'The Good Place'; }
   if ( wheelLocation == '-270' || wheelLocation == '90' ){ seriestitle = 'Hanna'; }
   if ( wheelLocation == '-279' || wheelLocation == '81' ){ seriestitle = 'Better Call Saul'; }
-  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; }
+  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; initSponsor(); }
   if ( wheelLocation == '-297' || wheelLocation == '63' ){ seriestitle = 'The Walking Dead'; }
   if ( wheelLocation == '-306' || wheelLocation == '54' ){ seriestitle = 'This is Us'; }
   if ( wheelLocation == '-315' || wheelLocation == '45' ){ seriestitle = 'True Detective'; }
@@ -166,12 +155,4 @@ function locateSeries(wheelLocation) {
   if ( wheelLocation == '-333' || wheelLocation == '27' ){ seriestitle = 'Smilf'; }
   if ( wheelLocation == '-342' || wheelLocation == '18' ){ seriestitle = 'Stranger Things'; }
   if ( wheelLocation == '-351' || wheelLocation == '9' ){ seriestitle = 'Chilling Adventures of Sabrina'; }
-}
-
-function editSeriesTT() {
-  wheelLocation = endingRotation;
-  locateSeries(wheelLocation);
-  seriesTitle.innerHTML = seriestitle;
-  seriesTitleTop.innerHTML = seriestitle;
-  console.log(endingRotation);
 }
