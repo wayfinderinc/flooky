@@ -36,13 +36,18 @@ h3 {
     position: absolute;
     width: 100%;
     height: 100%; }
-    #randomScreen #gradientBg #background1 {
+    #randomScreen #gradientBg #seriesBackground {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background: #5483E6;
+      background: #5483E6 url("../img/shows/russian-doll.jpg") no-repeat top center;
+      background-size: cover;
+      width: 667px;
+      height: 1000px;
+      left: 50%;
+      margin-left: -333.5px;
+      opacity: .5; }
+    #randomScreen #gradientBg .multiply {
       background-blend-mode: multiply; }
-    #randomScreen #gradientBg #background2 {
+    #randomScreen #gradientBg #background1 {
       position: absolute;
       width: 100%;
       height: 100%;

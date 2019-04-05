@@ -16,12 +16,12 @@ var d = document,
   dt1 = document.getElementById("descriptionTrivia").children[1],
   dt2 = document.getElementById("descriptionTrivia").children[2];
 
-    cg0.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
-    cg1.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
-    cg2.style.background = 'linear-gradient(90deg, #7EEFFD 0%, #48DBFB 100%)';
-    cg3.style.background = 'linear-gradient(-90deg, #8DCEFF 0%, #54A0FF 100%)';
-    cg4.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
-    cg5.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
+  cg0.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
+  cg1.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
+  cg2.style.background = 'linear-gradient(90deg, #7EEFFD 0%, #48DBFB 100%)';
+  cg3.style.background = 'linear-gradient(-90deg, #8DCEFF 0%, #54A0FF 100%)';
+  cg4.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
+  cg5.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
 
     // cf0.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
     // cf0.style.backgroundSize = 'cover';
@@ -56,6 +56,11 @@ TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 TweenLite.set(['.dislike', '.like', '.heart-top'], { autoAlpha:.7 });
 TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 
+// seriesBackground.style.backgroundColor = '#5483E6';
+// seriesBackground.style.backgroundImage = 'url(img/shows/russian-doll.jpg) no-repeat';
+// seriesBackground.style.backgroundSize = 'cover';
+// seriesBackground.style.backgroundPosition = 'center center';
+seriesBackground.style.backgroundBlendMode = 'multiply';
 series1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
 series1.style.backgroundSize = 'cover';
 series2.style.background = 'url(img/shows/ozark.jpg) no-repeat';
@@ -120,7 +125,7 @@ series31.style.background = 'url(img/shows/hanna.jpg) no-repeat';
 series31.style.backgroundSize = 'cover';
 series32.style.background = 'url(img/shows/better-call-saul.jpg) no-repeat';
 series32.style.backgroundSize = 'cover';
-series33.style.background = 'url(img/shows/game-of-thrones2.jpg) no-repeat';
+series33.style.background = 'url(img/shows/game-of-thrones3.jpg) no-repeat';
 series33.style.backgroundSize = 'cover';
 series34.style.background = 'url(img/shows/the-walking-dead.jpg) no-repeat';
 series34.style.backgroundSize = 'cover';
@@ -229,8 +234,8 @@ function likeSeries() {
     .to('.like', .2, { transformOrigin:'top right', scaleX:.8, x:4, ease:Expo.easeOut }, 0)
     .to('.like', .4, { scaleX:1, x:-23, ease:Expo.easeOut, autoAlpha:1 }, .2)
     .to('.heart-top', .4, { autoAlpha:1 }, .2)
-    .to('.like', .6, { transformOrigin:'center center', rotationY:360, ease:Expo.easeOut }, .55)
-    .to('.heart-like-fill', .3, { fill:'#F54242', ease:Expo.easeOut }, .6)
+    .to('.like', .5, { transformOrigin:'center center', rotationY:360, ease:Expo.easeOut }, .55)
+    .to('.heart-like-fill', .25, { fill:'#F54242', ease:Expo.easeOut }, .6)
     // .heart-like-fill{fill:#F54242;stroke:#FFFFFF;stroke-width:1.5;}
     ;
 }
