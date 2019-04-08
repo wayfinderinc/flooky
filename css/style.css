@@ -84,6 +84,9 @@ h3 {
       position: absolute;
       width: 100%;
       height: 100%; }
+    #randomScreen #gradientBg .snow {
+      display: none;
+      position: absolute; }
   #randomScreen #seriesCategory {
     position: relative;
     color: #fff;
