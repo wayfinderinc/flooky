@@ -20,6 +20,7 @@ h3 {
   padding: 0px; }
 
 #iphoneXS {
+  display: none;
   position: absolute;
   background: url(../img/misc/iphone-xs.svg) no-repeat;
   background-size: cover;
@@ -28,6 +29,7 @@ h3 {
   top: 17px; }
 
 #iphoneX {
+  display: none;
   position: absolute;
   background: url(../img/misc/iphone-xs.svg) no-repeat;
   background-size: cover;
@@ -48,7 +50,8 @@ h3 {
   height: 812px;
   overflow: hidden;
   top: 19px;
-  border-radius: 42px; }
+  border-radius: 42px;
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.4); }
 
 #randomScreen {
   display: flex;
@@ -79,6 +82,15 @@ h3 {
       background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%);
       background-blend-mode: lighten;
       opacity: .8; }
+    #randomScreen #gradientBg #flookySymbols {
+      display: none;
+      position: absolute;
+      background: url(../img/misc/symbols.png) no-repeat;
+      background-size: cover;
+      width: 333px;
+      height: 532px;
+      top: 86px;
+      left: 15px; }
     #randomScreen #gradientBg #sponsorBackground {
       display: none;
       position: absolute;
