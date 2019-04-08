@@ -19,24 +19,36 @@ h3 {
   overflow: visible;
   padding: 0px; }
 
+#iphoneXS {
+  position: absolute;
+  background: url(../img/misc/iphone-xs.svg) no-repeat;
+  background-size: cover;
+  width: 408.5px;
+  height: 833px;
+  top: 17px; }
+
 #iphoneX {
   position: absolute;
   background: url(../img/misc/iphone-xs.svg) no-repeat;
   background-size: cover;
-  width: 687px;
-  height: 1440px; }
+  width: 408.5px;
+  height: 750px; }
 
 #flookyApp {
   position: absolute;
+  background: #fff;
   width: 100vw;
   height: 100vh;
   overflow: hidden; }
 
 #flookyApp {
   position: absolute;
+  background: #fff;
   width: 375px;
   height: 812px;
-  overflow: hidden; }
+  overflow: hidden;
+  top: 19px;
+  border-radius: 42px; }
 
 #randomScreen {
   display: flex;

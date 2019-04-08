@@ -36,6 +36,8 @@ var d = document,
     // cf5.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
     // cf5.style.backgroundSize = 'cover';
 
+TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:56 });
+
 TweenLite.set('.wheel-top-right', { x:1884 });
 TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
 TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });

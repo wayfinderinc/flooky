@@ -8,10 +8,11 @@ h1 { font-size: $h1-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
 h2 { font-size: $h2-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
 h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
 
-#iphoneX { position: absolute; background: url(../img/misc/iphone-xs.svg) no-repeat; background-size: cover; width: 687px; height: 1440px; }
+#iphoneXS { position: absolute; background: url(../img/misc/iphone-xs.svg) no-repeat; background-size: cover; width: 408.5px; height: 833px; top: 17px; }
+#iphoneX { position: absolute; background: url(../img/misc/iphone-xs.svg) no-repeat; background-size: cover; width: 408.5px; height: 750px; }
 
-#flookyApp { position: absolute; width: 100vw; height: 100vh; overflow: hidden; }
-#flookyApp { position: absolute; width: 375px; height: 812px; overflow: hidden; }
+#flookyApp { position: absolute; background: #fff; width: 100vw; height: 100vh; overflow: hidden; }
+#flookyApp { position: absolute; background: #fff; width: 375px; height: 812px; overflow: hidden; top: 19px; border-radius: 42px; }
 
 #randomScreen { display: flex; flex-direction: column; justify-content: space-between; position: absolute; width: 100%; height: 692px;
   #gradientBg { position: absolute; width: 100%; height: 100%;
