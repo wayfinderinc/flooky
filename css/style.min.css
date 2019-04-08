@@ -205,7 +205,7 @@ h3 {
   position: relative;
   padding: 24px 24px 0; }
 
-#randomScreen .episode-area .seriesArea .episode-info .imdb-episode-info {
+#randomScreen .episode-area .seriesArea .episode-info .imdb-info {
   position: relative;
   color: #687588;
   font-family: "Open Sans", sans-serif;
@@ -213,7 +213,7 @@ h3 {
   line-height: 17px;
   padding-top: 4px; }
 
-#randomScreen .episode-area .seriesArea .episode-info .episode-description {
+#randomScreen .episode-area .seriesArea .episode-info .imdb-description {
   position: relative;
   color: #505E72;
   font-family: "Open Sans", sans-serif;

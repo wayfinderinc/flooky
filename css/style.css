@@ -19,10 +19,23 @@ h3 {
   overflow: visible;
   padding: 0px; }
 
+#iphoneX {
+  position: absolute;
+  background: url(../img/misc/iphone-xs.svg) no-repeat;
+  background-size: cover;
+  width: 687px;
+  height: 1440px; }
+
 #flookyApp {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  overflow: hidden; }
+
+#flookyApp {
+  position: absolute;
+  width: 375px;
+  height: 812px;
   overflow: hidden; }
 
 #randomScreen {
@@ -203,44 +216,27 @@ h3 {
             width: 138px;
             height: 100%;
             background: linear-gradient(315deg, #796EFD 0%, #FF7EAF 100%); }
-      #randomScreen .episode-area .seriesArea .episode-info {
+      #randomScreen .episode-area .seriesArea .imdb-se-ep-info {
         position: relative;
         padding: 24px 24px 0; }
-        #randomScreen .episode-area .seriesArea .episode-info #episodeTitle {
+        #randomScreen .episode-area .seriesArea .imdb-se-ep-info #episodeTitle, #randomScreen .episode-area .seriesArea .imdb-se-ep-info #seriesOverview {
           position: relative; }
-        #randomScreen .episode-area .seriesArea .episode-info .imdb-episode-info {
+        #randomScreen .episode-area .seriesArea .imdb-se-ep-info .imdb-info {
           position: relative;
           color: #687588;
           font-family: "Open Sans", sans-serif;
           font-size: 12px;
           line-height: 17px;
           padding-top: 4px; }
-        #randomScreen .episode-area .seriesArea .episode-info .episode-description {
+        #randomScreen .episode-area .seriesArea .imdb-se-ep-info .imdb-description {
           position: relative;
           color: #505E72;
           font-family: "Open Sans", sans-serif;
           font-size: 12px;
           line-height: 21px;
           padding-top: 24px; }
-      #randomScreen .episode-area .seriesArea .series-description-info {
-        position: relative;
-        padding: 24px 24px 0; }
-        #randomScreen .episode-area .seriesArea .series-description-info #seriesOverview {
-          position: relative; }
-        #randomScreen .episode-area .seriesArea .series-description-info .imdb-series-info {
-          position: relative;
-          color: #687588;
-          font-family: "Open Sans", sans-serif;
-          font-size: 12px;
-          line-height: 17px;
-          padding-top: 4px; }
-        #randomScreen .episode-area .seriesArea .series-description-info .series-description {
-          position: relative;
-          color: #505E72;
-          font-family: "Open Sans", sans-serif;
-          font-size: 12px;
-          line-height: 21px;
-          padding-top: 24px; }
+      #randomScreen .episode-area .seriesArea .imdb-ep {
+        display: none; }
   #randomScreen #quickLook {
     position: absolute;
     background: #fff;

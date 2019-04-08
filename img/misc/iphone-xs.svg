@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="687px" height="1400px" viewBox="0 0 687 1400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>iPhone XS - Dark Gray</title>
+    <desc>Created with Sketch.</desc>
+    <g id="iPhone-XS-Mockup---by-Sulkhanian" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-XS---Dark-Gray" transform="translate(-157.000000, -200.000000)">
+            <g transform="translate(157.000000, 200.000000)">
+                <path d="M95,4 C44.7420878,4 4,44.7420878 4,95 L4,1305 C4,1355.25791 44.7420878,1396 95,1396 L592,1396 C642.257912,1396 683,1355.25791 683,1305 L683,95 C683,44.7420878 642.257912,4 592,4 L95,4 Z M177,37 L177,57 C177,72.463973 189.536027,85 205,85 L483,85 C498.463973,85 511,72.463973 511,57 L511,37 L586,37 C623.555363,37 654,67.444637 654,105 L654,1295 C654,1332.55536 623.555363,1363 586,1363 L101,1363 C63.444637,1363 33,1332.55536 33,1295 L33,105 C33,67.444637 63.444637,37 101,37 L177,37 Z" id="Phone" stroke="#FFFFFF" stroke-width="8" fill="#323232"></path>
+                <path d="M418,36 C423.522847,36 428,40.4771525 428,46 C428,51.5228475 423.522847,56 418,56 C412.477153,56 408,51.5228475 408,46 C408,40.4771525 412.477153,36 418,36 Z" id="camera" fill="#515166"></path>
+                <path d="M303,41 L383,41 C385.761424,41 388,43.2385763 388,46 C388,48.7614237 385.761424,51 383,51 L303,51 C300.238576,51 298,48.7614237 298,46 C298,43.2385763 300.238576,41 303,41 Z" id="sensor" fill="#515166"></path>
+            </g>
+        </g>
+    </g>
+</svg>

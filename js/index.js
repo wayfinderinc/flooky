@@ -183,7 +183,7 @@ function setGOT() {
   quickLookBackground.style.backgroundPosition = 'center center';
   quickLookBackground.style.borderTop = '2px solid #2E3C4F';
   TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
-  TweenLite.set(['.decription-copy', '#episodeTitle', '.imdb-episode-info', '.episode-description'], { color:'#fff' });
+  TweenLite.set(['.decription-copy', '#episodeTitle', '#seriesOverview', '.imdb-info', '.imdb-description'], { color:'#fff' });
   TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
   TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
   var ec0 = document.getElementById("episodeCards").children[0],
@@ -223,12 +223,21 @@ function showEpisodeDescription() {
   TweenLite.to([dt1, dt2], .4, { autoAlpha:.65, ease:Expo.easeOut });
   TweenLite.to(dt0, .4, { autoAlpha:1, ease:Expo.easeOut });
   TweenLite.to('.bar-bg .bar', .4, { x:0, width:'138px', ease:Expo.easeOut });
+  TweenLite.to('.imdb-ep', .15, { autoAlpha:0, ease:Expo.easeOut, onComplete:function() {
+    TweenLite.set('.imdb-ep', { display:'none' });
+    TweenLite.set('.imdb-se', { display:'block' });
+  } });
+  TweenLite.fromTo('.imdb-se', .4, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut, delay:.15 });
 }
 
 function showSeriesDescription() {
   TweenLite.to([dt0, dt2], .4, { autoAlpha:.65, ease:Expo.easeOut });
   TweenLite.to(dt1, .4, { autoAlpha:1, ease:Expo.easeOut });
   TweenLite.to('.bar-bg .bar', .4, { x:151, width:'124px', ease:Expo.easeOut });
+  TweenLite.to('.imdb-se', .15, { autoAlpha:0, ease:Expo.easeOut, onComplete:function() {
+    TweenLite.set('.imdb-se', { display:'none' });
+  } });
+  TweenLite.fromTo('.imdb-ep', .4, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut, delay:.15 });
 }
 
 function likeSeries() {
@@ -239,7 +248,6 @@ function likeSeries() {
     .to('.heart-top', .4, { autoAlpha:1 }, .2)
     .to('.like', .5, { transformOrigin:'center center', rotationY:360, ease:Expo.easeOut }, .55)
     .to('.heart-like-fill', .25, { fill:'#F54242', ease:Expo.easeOut }, .6)
-    // .heart-like-fill{fill:#F54242;stroke:#FFFFFF;stroke-width:1.5;}
     ;
 }
 
