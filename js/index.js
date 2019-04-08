@@ -38,6 +38,17 @@ var d = document,
 
 TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:56 });
 
+function detectmob() {
+   if(window.innerWidth <= 500) {
+     // return true;
+     TweenLite.set('.iphone', { display:'none' });
+     TweenLite.set('#flookyApp', { width:'100vw', height:'100vh', top:'0px', borderRadius:'0px', y:0 });
+     console.log('mobile detected');
+   }
+}
+
+detectmob();
+
 TweenLite.set('.wheel-top-right', { x:1884 });
 TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
 TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });
