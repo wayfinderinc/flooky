@@ -154,7 +154,7 @@ function locateSeries(wheelLocation) {
   if ( wheelLocation == '-261' || wheelLocation == '99' ){ seriestitle = 'The Good Place'; seriesBackground.style.background = '#5483E6 url(img/shows/the-good-place.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-270' || wheelLocation == '90' ){ seriestitle = 'Hanna'; seriesBackground.style.background = '#5483E6 url(img/shows/hanna.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-279' || wheelLocation == '81' ){ seriestitle = 'Better Call Saul'; seriesBackground.style.background = '#5483E6 url(img/shows/better-call-saul.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; initSponsor(); }
+  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; seriesBackground.style.background = '#5483E6 url(img/shows/game-of-thrones-sponsor.jpg) no-repeat top center / cover'; initSponsor(); }
   if ( wheelLocation == '-297' || wheelLocation == '63' ){ seriestitle = 'The Walking Dead'; seriesBackground.style.background = '#5483E6 url(img/shows/the-walking-dead.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-306' || wheelLocation == '54' ){ seriestitle = 'This is Us'; seriesBackground.style.background = '#5483E6 url(img/shows/this-is-us.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-315' || wheelLocation == '45' ){ seriestitle = 'True Detective'; seriesBackground.style.background = '#5483E6 url(img/shows/true-detective.jpg) no-repeat top center / cover'; }

@@ -146,9 +146,16 @@ series32.style.background = 'url(img/shows/better-call-saul.jpg) no-repeat';
 series32.style.backgroundSize = 'cover';
 if ( sponsorship == 1 || sponsorship == 3 ){
   series33.style.background = 'url(img/shows/game-of-thrones3.jpg) no-repeat';
+  series33.style.backgroundSize = 'cover';
 }
 if ( sponsorship == 2 ){
   series33.style.background = 'url(img/shows/game-of-thrones4.jpg) no-repeat';
+  series33.style.backgroundSize = 'cover';
+}
+if ( sponsorship == 3 ){
+  series33.style.background = 'url(img/shows/game-of-thrones-sponsor.jpg) no-repeat';
+  series33.style.backgroundSize = 'contain';
+  series33.style.backgroundPosition = 'center center';
 }
 series33.style.backgroundSize = 'cover';
 series34.style.background = 'url(img/shows/the-walking-dead.jpg) no-repeat';
@@ -180,20 +187,31 @@ function setCopy() {
 }
 
 function initSeries() {
-  initBackButton();
-  seriesTransition = new TimelineMax();
-  seriesTransition.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut })
-    .to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:.0 }, 0)
-    .set('.episode-area', { display:'block' }, 0)
-    .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
-    .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
+  if ( sponsorship == 1 || sponsorship == 2 ) {
+    initBackButton();
+    var seriesTransition = new TimelineMax();
+    seriesTransition.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut })
+      .to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:0 }, 0)
+      .set('.episode-area', { display:'block' }, 0)
+      .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
+      .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
+  } else if ( sponsorship ==3 ){
+    var seriesTransition = new TimelineMax();
+    seriesTransition.set('.episode-area', { display:'block' }, 0)
+      .to('.randomWheel', .5, { autoAlpha:.2, ease:Expo.easeOut }, 0)
+      .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
+      .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
+  }
 }
 
-sponsorBackground = document.getElementById('sponsorBackground')
-sponsorBackground.onclick = function() {
+sponsorSupport = document.getElementById('sponsorSupport');
+sponsorSupport.onclick = function() {
+  sponsorBackground.style.background = '#000';
+  TweenLite.to('.randomWheel', .5, { autoAlpha:.25, ease:Expo.easeOut });
+  TweenLite.to('#sponsorSupport', .4, { autoAlpha:0, ease:Expo.easeOut });
   TweenLite.set('.episode-area', { display:'block' }, 0)
-  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
-  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOu, delay:.04 });
+  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut });
+  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.04 });
 }
 
 function initFlookyRandomScreen() {
@@ -309,7 +327,7 @@ function setGOT() {
     imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
     episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
     sponsorBackground = document.getElementById('sponsorBackground');
-    sponsorBackground.style.background = 'url(img/background/sponsor-got-bg.jpg) no-repeat';
+    sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
     sponsorBackground.style.backgroundSize = 'cover';
     sponsorBackground.style.backgroundPosition = 'center center';
     TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
@@ -361,11 +379,17 @@ function initSponsor() {
       .fromTo('.snow', 1.2, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut, onStart:letitsnow }, .75);
   }
   if ( sponsorship == 3 ){
-    sponsorTl.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut, onStart:initBackButton }, .8)
-      //.to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:0 }, .8)
-      .fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 1)
+    var sponsorSupport = document.getElementById('sponsorSupport');
+    sponsorSupport.style.background = 'url(img/shows/game-of-thrones-sponsor-support.png) no-repeat';
+    sponsorSupport.style.backgroundSize = 'cover';
+    sponsorSupport.style.top = '8px';
+    sponsorTl.set('.seriesInfo', { display:'none' }, 0)
+      .to('#seriesCategory', .4, { autoAlpha:0, ease:Expo.easeInOut }, .2)
       .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 1)
-      .to('.randomWheel', .4, { scale:2, y:1852, ease:Expo.easeInOut });
+      .to('.randomWheel', .4, { scale:2, y:1853, ease:Expo.easeOut, onStart:initBackButton }, .6)
+      .fromTo('#sponsorSupport', .4, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, .8)
+      .set('#sponsorBackground', { display:'block' }, 1.4);
+      console.log('tseintkj mjitos lovo birl');
   }
 }
 
