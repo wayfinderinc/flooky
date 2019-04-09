@@ -49,6 +49,12 @@ function detectmob() {
 
 detectmob();
 
+// var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
+var url_string = window.location.href; //window.location.href
+var url = new URL(url_string);
+var sponsorship = url.searchParams.get("sponsorship");
+console.log(sponsorship);
+
 TweenLite.set('.wheel-top-right', { x:1884 });
 TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
 TweenLite.set('.wheel-bottom-left', { x:2116, y:4000, transformOrigin:'bottom left', rotation:180 });
@@ -138,7 +144,12 @@ series31.style.background = 'url(img/shows/hanna.jpg) no-repeat';
 series31.style.backgroundSize = 'cover';
 series32.style.background = 'url(img/shows/better-call-saul.jpg) no-repeat';
 series32.style.backgroundSize = 'cover';
-series33.style.background = 'url(img/shows/game-of-thrones3.jpg) no-repeat';
+if ( sponsorship == 1 || sponsorship == 3 ){
+  series33.style.background = 'url(img/shows/game-of-thrones3.jpg) no-repeat';
+}
+if ( sponsorship == 2 ){
+  series33.style.background = 'url(img/shows/game-of-thrones4.jpg) no-repeat';
+}
 series33.style.backgroundSize = 'cover';
 series34.style.background = 'url(img/shows/the-walking-dead.jpg) no-repeat';
 series34.style.backgroundSize = 'cover';
@@ -178,63 +189,184 @@ function initSeries() {
     .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
 }
 
+sponsorBackground = document.getElementById('sponsorBackground')
+sponsorBackground.onclick = function() {
+  TweenLite.set('.episode-area', { display:'block' }, 0)
+  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
+  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOu, delay:.04 });
+}
+
 function initFlookyRandomScreen() {
   seriesTransition.reverse();
   TweenLite.to('#backCTA', .4, { autoAlpha:0, x:-24, ease:Expo.easeInOut });
   TweenLite.to('#seriesSearch', .6, { autoAlpha:1, scale:1, ease:Expo.easeInOut });
 }
 
+function addSourceToVideo(element, src, type) {
+  var source = document.createElement('source');
+  source.src = src;
+  source.type = type;
+  element.appendChild(source);
+}
+
 function setGOT() {
-  seriestitle = 'Game of Thrones';
-  seriesTitle.innerHTML = seriestitle;
-  seriesTitleTop.innerHTML = seriestitle;
-  episodeTitle.innerHTML = 'DragonStone';
-  imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
-  episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
-  sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
-  sponsorBackground.style.backgroundSize = 'cover';
-  sponsorBackground.style.backgroundPosition = 'center center';
-  quickLookBackground.style.background = 'url(img/background/got-flipped.jpg) no-repeat';
-  quickLookBackground.style.backgroundSize = 'cover';
-  quickLookBackground.style.backgroundPosition = 'center center';
-  quickLookBackground.style.borderTop = '2px solid #2E3C4F';
-  TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
-  TweenLite.set(['.decription-copy', '#episodeTitle', '#seriesOverview', '.imdb-info', '.imdb-description'], { color:'#fff' });
-  TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
-  TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
-  var ec0 = document.getElementById("episodeCards").children[0],
-  ec1 = document.getElementById("episodeCards").children[1],
-  ec2 = document.getElementById("episodeCards").children[2],
-  ec3 = document.getElementById("episodeCards").children[3],
-  ec4 = document.getElementById("episodeCards").children[4],
-  ec5 = document.getElementById("episodeCards").children[5];
-  ec6 = document.getElementById("episodeCards").children[6];
-  ec0.style.background = 'url(img/episodes/got-s7-e1.jpg) no-repeat';
-  ec0.style.backgroundSize = 'cover';
-  ec1.style.background = 'url(img/episodes/got-s7-e2.jpg) no-repeat';
-  ec1.style.backgroundSize = 'cover';
-  ec2.style.background = 'url(img/episodes/got-s7-e3.jpg) no-repeat';
-  ec2.style.backgroundSize = 'cover';
-  ec3.style.background = 'url(img/episodes/got-s7-e4.jpg) no-repeat';
-  ec3.style.backgroundSize = 'cover';
-  ec4.style.background = 'url(img/episodes/got-s7-e5.jpg) no-repeat';
-  ec4.style.backgroundSize = 'cover';
-  ec5.style.background = 'url(img/episodes/got-s7-e6.jpg) no-repeat';
-  ec5.style.backgroundSize = 'cover';
-  ec6.style.background = 'url(img/episodes/got-s7-e7.jpg) no-repeat';
-  ec6.style.backgroundSize = 'cover';
+  if ( sponsorship == 1 ){
+    seriestitle = 'Game of Thrones';
+    seriesTitle.innerHTML = seriestitle;
+    seriesTitleTop.innerHTML = seriestitle;
+    episodeTitle.innerHTML = 'DragonStone';
+    imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
+    episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
+    sponsorBackground = document.getElementById('sponsorBackground');
+    sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
+    sponsorBackground.style.backgroundSize = 'cover';
+    sponsorBackground.style.backgroundPosition = 'center center';
+    quickLookBackground.style.background = 'url(img/background/got-flipped.jpg) no-repeat';
+    quickLookBackground.style.backgroundSize = 'cover';
+    quickLookBackground.style.backgroundPosition = 'center center';
+    quickLookBackground.style.borderTop = '2px solid #2E3C4F';
+    TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
+    TweenLite.set(['.decription-copy', '#episodeTitle', '#seriesOverview', '.imdb-info', '.imdb-description'], { color:'#fff' });
+    TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
+    TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
+    var ec0 = document.getElementById("episodeCards").children[0],
+    ec1 = document.getElementById("episodeCards").children[1],
+    ec2 = document.getElementById("episodeCards").children[2],
+    ec3 = document.getElementById("episodeCards").children[3],
+    ec4 = document.getElementById("episodeCards").children[4],
+    ec5 = document.getElementById("episodeCards").children[5];
+    ec6 = document.getElementById("episodeCards").children[6];
+    ec0.style.background = 'url(img/episodes/got-s7-e1.jpg) no-repeat';
+    ec0.style.backgroundSize = 'cover';
+    ec1.style.background = 'url(img/episodes/got-s7-e2.jpg) no-repeat';
+    ec1.style.backgroundSize = 'cover';
+    ec2.style.background = 'url(img/episodes/got-s7-e3.jpg) no-repeat';
+    ec2.style.backgroundSize = 'cover';
+    ec3.style.background = 'url(img/episodes/got-s7-e4.jpg) no-repeat';
+    ec3.style.backgroundSize = 'cover';
+    ec4.style.background = 'url(img/episodes/got-s7-e5.jpg) no-repeat';
+    ec4.style.backgroundSize = 'cover';
+    ec5.style.background = 'url(img/episodes/got-s7-e6.jpg) no-repeat';
+    ec5.style.backgroundSize = 'cover';
+    ec6.style.background = 'url(img/episodes/got-s7-e7.jpg) no-repeat';
+    ec6.style.backgroundSize = 'cover';
+  }
+  if ( sponsorship == 2 ){
+    seriestitle = 'Game of Thrones';
+    seriesTitle.innerHTML = seriestitle;
+    seriesTitleTop.innerHTML = seriestitle;
+    episodeTitle.innerHTML = 'DragonStone';
+    imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
+    episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
+
+    var video = document.createElement('video'),
+        sponsorBackground = document.getElementById('sponsorBackground');
+    sponsorBackground.appendChild(video);
+    video.width = 375;
+    video.height = 692;
+    video.id = 'gotVid';
+    addSourceToVideo(video, 'video/flooky-got.mp4', 'video/mp4');
+    video.play();
+    videoListener();
+    // sponsorBackground.style.background = 'url(img/background/got.jpg) no-repeat';
+    // sponsorBackground.style.backgroundSize = 'cover';
+    // sponsorBackground.style.backgroundPosition = 'center center';
+    quickLookBackground.style.background = 'url(img/background/got-flipped.jpg) no-repeat';
+    quickLookBackground.style.backgroundSize = 'cover';
+    quickLookBackground.style.backgroundPosition = 'center center';
+    quickLookBackground.style.borderTop = '2px solid #2E3C4F';
+    TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.4 });
+    TweenLite.set(['.decription-copy', '#episodeTitle', '#seriesOverview', '.imdb-info', '.imdb-description'], { color:'#fff' });
+    TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
+    TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
+    var ec0 = document.getElementById("episodeCards").children[0],
+    ec1 = document.getElementById("episodeCards").children[1],
+    ec2 = document.getElementById("episodeCards").children[2],
+    ec3 = document.getElementById("episodeCards").children[3],
+    ec4 = document.getElementById("episodeCards").children[4],
+    ec5 = document.getElementById("episodeCards").children[5];
+    ec6 = document.getElementById("episodeCards").children[6];
+    ec0.style.background = 'url(img/episodes/got-s7-e1.jpg) no-repeat';
+    ec0.style.backgroundSize = 'cover';
+    ec1.style.background = 'url(img/episodes/got-s7-e2.jpg) no-repeat';
+    ec1.style.backgroundSize = 'cover';
+    ec2.style.background = 'url(img/episodes/got-s7-e3.jpg) no-repeat';
+    ec2.style.backgroundSize = 'cover';
+    ec3.style.background = 'url(img/episodes/got-s7-e4.jpg) no-repeat';
+    ec3.style.backgroundSize = 'cover';
+    ec4.style.background = 'url(img/episodes/got-s7-e5.jpg) no-repeat';
+    ec4.style.backgroundSize = 'cover';
+    ec5.style.background = 'url(img/episodes/got-s7-e6.jpg) no-repeat';
+    ec5.style.backgroundSize = 'cover';
+    ec6.style.background = 'url(img/episodes/got-s7-e7.jpg) no-repeat';
+    ec6.style.backgroundSize = 'cover';
+  }
+  if ( sponsorship == 3 ){
+    seriestitle = 'Game of Thrones';
+    seriesTitle.innerHTML = seriestitle;
+    seriesTitleTop.innerHTML = seriestitle;
+    episodeTitle.innerHTML = 'DragonStone';
+    imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  July 16, 2017 &nbsp;&bull;&nbsp; 59min';
+    episodeDescription.innerHTML = 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys "the North remembers."" Sam adapts to life in Oldtown. The Night King makes his way south.';
+    sponsorBackground = document.getElementById('sponsorBackground');
+    sponsorBackground.style.background = 'url(img/background/sponsor-got-bg.jpg) no-repeat';
+    sponsorBackground.style.backgroundSize = 'cover';
+    sponsorBackground.style.backgroundPosition = 'center center';
+    TweenLite.set('.series-area-bg', { background:'#000', autoAlpha:.25 });
+    TweenLite.set(['.decription-copy', '#episodeTitle', '#seriesOverview', '.imdb-info', '.imdb-description'], { color:'#fff' });
+    TweenLite.set('.bar-bg', { background:'rgba(255,255,255,0.15)' });
+    TweenLite.set('.bar-bg .bar', { background:'#2BA8ED' });
+    var ec0 = document.getElementById("episodeCards").children[0],
+    ec1 = document.getElementById("episodeCards").children[1],
+    ec2 = document.getElementById("episodeCards").children[2],
+    ec3 = document.getElementById("episodeCards").children[3],
+    ec4 = document.getElementById("episodeCards").children[4],
+    ec5 = document.getElementById("episodeCards").children[5];
+    ec6 = document.getElementById("episodeCards").children[6];
+    ec0.style.background = 'url(img/episodes/got-s7-e1.jpg) no-repeat';
+    ec0.style.backgroundSize = 'cover';
+    ec1.style.background = 'url(img/episodes/got-s7-e2.jpg) no-repeat';
+    ec1.style.backgroundSize = 'cover';
+    ec2.style.background = 'url(img/episodes/got-s7-e3.jpg) no-repeat';
+    ec2.style.backgroundSize = 'cover';
+    ec3.style.background = 'url(img/episodes/got-s7-e4.jpg) no-repeat';
+    ec3.style.backgroundSize = 'cover';
+    ec4.style.background = 'url(img/episodes/got-s7-e5.jpg) no-repeat';
+    ec4.style.backgroundSize = 'cover';
+    ec5.style.background = 'url(img/episodes/got-s7-e6.jpg) no-repeat';
+    ec5.style.backgroundSize = 'cover';
+    ec6.style.background = 'url(img/episodes/got-s7-e7.jpg) no-repeat';
+    ec6.style.backgroundSize = 'cover';
+  }
+}
+
+function videoListener() {
+  var myVideo = document.getElementById('gotVid');
+  myVideo.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  }, false);
 }
 
 function initSponsor() {
   setGOT();
+  var wheelColor = '#2BA8ED';
   var sponsorTl = new TimelineMax({ delay:.2 });
-  sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut })
-    .fromTo('#quickLookBackground', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 0)
-    .to('.category-type h3', .6, { color:'#fff', ease:Expo.easeOut }, 0)
-    .to('#wheelArmBg', .8, { background:'#2BA8ED', boxShadow:'4px 4px 8px 0 #2E3C4F' }, 0)
-    .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 0)
-    .fromTo('.snow', 1.2, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut, onStart:letitsnow }, .75)
-    ;
+  if ( sponsorship == 1 || sponsorship == 2 ){
+    sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut })
+      .fromTo('#quickLookBackground', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 0)
+      .to('.category-type h3', .6, { color:'#fff', ease:Expo.easeOut }, 0)
+      .to('#wheelArmBg', .8, { background:wheelColor, boxShadow:'4px 4px 8px 0 #2E3C4F' }, 0)
+      .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 0)
+      .fromTo('.snow', 1.2, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut, onStart:letitsnow }, .75);
+  }
+  if ( sponsorship == 3 ){
+    sponsorTl.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut, onStart:initBackButton }, .8)
+      //.to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:0 }, .8)
+      .fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 1)
+      .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 1)
+      .to('.randomWheel', .4, { scale:2, y:1852, ease:Expo.easeInOut });
+  }
 }
 
 function showEpisodeDescription() {
@@ -285,6 +417,7 @@ function consoleScreenDimensions() {
 setCopy();
 
 function letitsnow() {
+if ( sponsorship == 1 ){
 class Shader {
 
   constructor( holder, options = {} ) {
@@ -914,4 +1047,4 @@ const snow = new Shader( holder, {
     // stats.update()
   },
 } )
-}
+}}
