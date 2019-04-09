@@ -103,6 +103,16 @@ var dragEpisodes = new Draggable(".episode-cards ul", {
   }
 });
 
+Draggable.create("#quickLook", {
+  type:"y",
+  edgeResistance:0.9,
+  bounds:{minY:0, maxY:-638},
+  throwProps:true,
+  onDrag:function() {
+    //console.log(x);
+  }
+});
+
 function getMomentaryDirection(target) {
   var x = ThrowPropsPlugin.getVelocity(target, "x"),
       y = ThrowPropsPlugin.getVelocity(target, "y"),
