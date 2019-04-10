@@ -279,6 +279,13 @@ h3 {
       position: absolute;
       width: 100%;
       height: 100%; }
+    #randomScreen #quickLook .drag-icon {
+      display: none;
+      position: absolute;
+      background: url(../img/misc/drag.svg) no-repeat;
+      width: 48px;
+      height: 8px;
+      top: 16px; }
     #randomScreen #quickLook .category-type h3 {
       position: relative;
       color: #223041; }

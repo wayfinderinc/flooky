@@ -69,9 +69,9 @@ TweenLite.set('.seriesCard7', { x:1478, y:753, rotation:54 });
 TweenLite.set('.seriesCard8', { x:1628, y:998, rotation:63 });
 TweenLite.set('.seriesCard9', { x:1737, y:1262, rotation:72 });
 TweenLite.set('.seriesCard10', { x:1804, y:1541, rotation:81 });
-TweenLite.set(wheelArm, { left:'50%', xPercent:-50 });
-TweenLite.set(wheelArmBg, { rotation:45 });
-TweenLite.set(armIcon, { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
+TweenLite.set(['#wheelArm', '.drag-icon'], { left:'50%', xPercent:-50 });
+TweenLite.set('#wheelArmBg', { rotation:45 });
+TweenLite.set('#armIcon', { left:'50%', xPercent:-50, top:'50%', yPercent:-50 });
 TweenLite.set(['.dislike', '.like', '.heart-top'], { autoAlpha:.7 });
 TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 

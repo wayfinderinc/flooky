@@ -132,6 +132,7 @@ Draggable.create("#quickLook", {
   onDragEnd:function() {
     if ( QLstartY > QLendY ) {
       TweenLite.to('#quickLook', .6, { y:-598, ease:Expo.easeOut });
+      TweenLite.fromTo('.drag-icon', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
     } else {
       TweenLite.to('#quickLook', .6, { y:0, ease:Expo.easeOut });
       TweenLite.to('#wheelArm', .8, { y:0, ease:Expo.easeOut });
@@ -141,6 +142,7 @@ Draggable.create("#quickLook", {
 
 function hideWheel() {
   TweenLite.to('#wheelArm', .6, { y:160, ease:Back.easeIn });
+  TweenLite.to('.drag-icon', .6, { autoAlpha:0, ease:Expo.easeOut });
 }
 
 
