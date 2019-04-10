@@ -34,7 +34,7 @@ Draggable.create("#wheelArm", {
     onClick:function() {
       editSeriesTT();
 
-      sponsorTl.timeScale(3);
+      sponsorTl.timeScale(5);
       sponsorTl.reverse();
 
       seriestitle = 'Russian Doll';
