@@ -20,7 +20,9 @@ var d = document,
 
   dt0 = document.getElementById("descriptionTrivia").children[0],
   dt1 = document.getElementById("descriptionTrivia").children[1],
-  dt2 = document.getElementById("descriptionTrivia").children[2];
+  dt2 = document.getElementById("descriptionTrivia").children[2],
+
+  armClick = 1;
 
   cg0.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
   cg1.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
@@ -412,7 +414,7 @@ function videoListener() {
 function initSponsor() {
   setGOT();
   var wheelColor = '#2BA8ED';
-  var sponsorTl = new TimelineMax({ delay:.2 });
+  sponsorTl = new TimelineMax({ delay:.2 });
   if ( sponsorship == 1 || sponsorship == 2 ){
     sponsorTl.fromTo('#sponsorBackground', .8, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut })
       .fromTo('#quickLookBackground', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, 0)

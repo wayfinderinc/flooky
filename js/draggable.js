@@ -32,12 +32,27 @@ Draggable.create("#wheelArm", {
     bounds:{minY:-0, maxY:24},
     lockAxis:true,
     onClick:function() {
+      editSeriesTT();
+
+      sponsorTl.timeScale(3);
+      sponsorTl.reverse();
+
+      seriestitle = 'Russian Doll';
+      seriesTitle.innerHTML = seriestitle;
+      seriesTitleTop.innerHTML = seriestitle;
+      TweenLite.to('.like', .6, { scaleX:1, x:0, ease:Expo.easeOut });
+      TweenLite.to('.heart-like-fill', .6, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to(".randomWheel", .8, { rotation:-288, ease:Expo.easeOut });
-      TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
-        // editSeriesTT();
-        initSponsor();
-        TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
-      } });
+      TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
+      TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
+      TweenLite.to(".randomWheel", .8, { rotation:-360, ease:Expo.easeOut });
+
+      // TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
+      //   // editSeriesTT();
+      //   initSponsor();
+      //   TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
+      // } });
+
     },
     onDrag:function(){
       reverseWheel++;
@@ -53,7 +68,6 @@ Draggable.create("#wheelArm", {
         TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
         TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
         TweenLite.to(".randomWheel", .8, { rotation:-288, ease:Expo.easeOut });
-        // editSeriesTT();
         initSponsor();
       }
     }
