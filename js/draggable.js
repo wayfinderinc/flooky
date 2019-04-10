@@ -103,26 +103,46 @@ var dragEpisodes = new Draggable(".episode-cards ul", {
   }
 });
 
-Draggable.create("#quickLook", {
-  type:"y",
-  edgeResistance:0.9,
-  bounds:{minY:0, maxY:-638},
-  throwProps:true,
-  onDrag:function() {
-    //console.log(x);
-  }
-});
-
 function getMomentaryDirection(target) {
   var x = ThrowPropsPlugin.getVelocity(target, "x"),
       y = ThrowPropsPlugin.getVelocity(target, "y"),
       ratio = Math.abs(x / y),
       direction = [];
-  if (ratio > 0.25) {
-    direction.push((x < 0) ? "left" : "right");
+  if (ratio > 0.25) { //you can adjust the ratio thresholds to make things more or less sensitive to diagonal movement.
+    direction.push((xChange < 0) ? "left" : "right");
   }
   return direction.join("-");
 }
+
+Draggable.create("#quickLook", {
+  type:"y",
+  edgeResistance:1,
+  bounds:{minY:0, maxY:-598},
+  throwProps:true,
+  onPress:function() {
+    QLstartX = this.x;
+    QLstartY = this.y;
+    QLendY = this.endX;
+    QLendY = this.endY;
+  },
+  onDrag:function() {
+    hideWheel();
+    //TweenLite.to('#wheelArm', .8, { y:200, ease:Back.easeIn });
+  },
+  onDragEnd:function() {
+    if ( QLstartY > QLendY ) {
+      TweenLite.to('#quickLook', .6, { y:-598, ease:Expo.easeOut });
+    } else {
+      TweenLite.to('#quickLook', .6, { y:0, ease:Expo.easeOut });
+      TweenLite.to('#wheelArm', .8, { y:0, ease:Expo.easeOut });
+    }
+  }
+});
+
+function hideWheel() {
+  TweenLite.to('#wheelArm', .6, { y:160, ease:Back.easeIn });
+}
+
 
 function editSeriesTT() {
   wheelLocation = dragWheel.endRotation;

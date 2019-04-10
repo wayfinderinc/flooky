@@ -295,11 +295,14 @@ h3 {
       float: left;
       margin-right: 16.5px;
       border-radius: 3px; }
+    #randomScreen #quickLook .card-series {
+      height: 147px; }
   #randomScreen #wheelArm {
     position: absolute;
     width: 48px;
     height: 48px;
-    top: 670px; }
+    top: 670px;
+    z-index: 10001; }
     #randomScreen #wheelArm #armIcon {
       position: absolute;
       width: 20px;
