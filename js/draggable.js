@@ -40,6 +40,7 @@ Draggable.create("#wheelArm", {
       seriestitle = 'Russian Doll';
       seriesTitle.innerHTML = seriestitle;
       seriesTitleTop.innerHTML = seriestitle;
+      seriesBackground.style.background = '#5483E6 url(img/shows/russian-doll.jpg) no-repeat top center / cover';
       TweenLite.to('.like', .6, { scaleX:1, x:0, ease:Expo.easeOut });
       TweenLite.to('.heart-like-fill', .6, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to(".randomWheel", .8, { rotation:-288, ease:Expo.easeOut });
