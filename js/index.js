@@ -5,12 +5,18 @@ var d = document,
   cg3 = document.getElementById("catGenre").children[3],
   cg4 = document.getElementById("catGenre").children[4],
   cg5 = document.getElementById("catGenre").children[5],
-  // cf0 = document.getElementById("catFeatured").children[0],
-  // cf1 = document.getElementById("catFeatured").children[1],
-  // cf2 = document.getElementById("catFeatured").children[2],
-  // cf3 = document.getElementById("catFeatured").children[3],
-  // cf4 = document.getElementById("catFeatured").children[4],
-  // cf5 = document.getElementById("catFeatured").children[5],
+  cf0 = document.getElementById("catFavorites").children[0],
+  cf1 = document.getElementById("catFavorites").children[1],
+  cf2 = document.getElementById("catFavorites").children[2],
+  cf3 = document.getElementById("catFavorites").children[3],
+  cf4 = document.getElementById("catFavorites").children[4],
+  cf5 = document.getElementById("catFavorites").children[5],
+  cr0 = document.getElementById("catRecommended").children[0],
+  cr1 = document.getElementById("catRecommended").children[1],
+  cr2 = document.getElementById("catRecommended").children[2],
+  cr3 = document.getElementById("catRecommended").children[3],
+  cr4 = document.getElementById("catRecommended").children[4],
+  cr5 = document.getElementById("catRecommended").children[5],
 
   dt0 = document.getElementById("descriptionTrivia").children[0],
   dt1 = document.getElementById("descriptionTrivia").children[1],
@@ -23,18 +29,31 @@ var d = document,
   cg4.style.background = 'linear-gradient(90deg, #FFA4A4 0%, #FF6B6B 100%)';
   cg5.style.background = 'linear-gradient(90deg, #FFCD78 0%, #FF9F43 100%)';
 
-    // cf0.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
-    // cf0.style.backgroundSize = 'cover';
-    // cf1.style.background = 'url(img/shows/the-office.jpg) no-repeat';
-    // cf1.style.backgroundSize = 'cover';
-    // cf2.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
-    // cf2.style.backgroundSize = 'cover';
-    // cf3.style.background = 'url(img/shows/master-of-none.jpg) no-repeat';
-    // cf3.style.backgroundSize = 'cover';
-    // cf4.style.background = 'url(img/shows/the-office.jpg) no-repeat';
-    // cf4.style.backgroundSize = 'cover';
-    // cf5.style.background = 'url(img/shows/modern-family.jpg) no-repeat';
-    // cf5.style.backgroundSize = 'cover';
+  cf0.style.background = 'url(img/shows/arrested-development.jpg) no-repeat';
+  cf0.style.backgroundSize = 'cover';
+  cf1.style.background = 'url(img/shows/breaking-bad.jpg) no-repeat';
+  cf1.style.backgroundSize = 'cover';
+  cf2.style.background = 'url(img/shows/star-trek-next-generation.jpg) no-repeat';
+  cf2.style.backgroundSize = 'cover';
+  cf3.style.background = 'url(img/shows/friends.jpg) no-repeat';
+  cf3.style.backgroundSize = 'cover';
+  cf4.style.background = 'url(img/shows/game-of-thrones4.jpg) no-repeat';
+  cf4.style.backgroundSize = 'cover';
+  cf5.style.background = 'url(img/shows/the-walking-dead.jpg) no-repeat';
+  cf5.style.backgroundSize = 'cover';
+
+  cr0.style.background = 'url(img/shows/true-detective.jpg) no-repeat';
+  cr0.style.backgroundSize = 'cover';
+  cr1.style.background = 'url(img/shows/ozark.jpg) no-repeat';
+  cr1.style.backgroundSize = 'cover';
+  cr2.style.background = 'url(img/shows/better-call-saul.jpg) no-repeat';
+  cr2.style.backgroundSize = 'cover';
+  cr3.style.background = 'url(img/shows/hanna.jpg) no-repeat';
+  cr3.style.backgroundSize = 'cover';
+  cr4.style.background = 'url(img/shows/the-umbrella-academy.jpg) no-repeat';
+  cr4.style.backgroundSize = 'cover';
+  cr5.style.background = 'url(img/shows/stranger-things.jpg) no-repeat';
+  cr5.style.backgroundSize = 'cover';
 
 TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:56 });
 
@@ -53,7 +72,7 @@ detectmob();
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var sponsorship = url.searchParams.get("sponsorship");
-console.log(sponsorship);
+console.log('sponsorship '+sponsorship);
 
 TweenLite.set('.wheel-top-right', { x:1884 });
 TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });

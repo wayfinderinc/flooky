@@ -59,13 +59,35 @@ Draggable.create("#wheelArm", {
     }
 });
 
-Draggable.create(".category-list ul", {
+Draggable.create(".cat-genre ul", {
   type:"x",
   edgeResistance:0.65,
   bounds:{minX:0, maxX:-734},
   throwProps:true,
   onDrag:function() {
     //console.log(x);
+  }
+});
+
+Draggable.create(".cat-fav", {
+  type:"x",
+  edgeResistance:0.65,
+  bounds:{minX:0, maxX:-344},
+  throwProps:true,
+  onDrag:function() {
+    // var x = this.x;
+    // console.log(x);
+  }
+});
+
+Draggable.create(".cat-rec", {
+  type:"x",
+  edgeResistance:0.65,
+  bounds:{minX:0, maxX:-344},
+  throwProps:true,
+  onDrag:function() {
+    // var x = this.x;
+    // console.log(x);
   }
 });
 
@@ -117,21 +139,22 @@ function getMomentaryDirection(target) {
 Draggable.create("#quickLook", {
   type:"y",
   edgeResistance:1,
-  bounds:{minY:0, maxY:-598},
+  bounds:{minY:0, maxY:-618},
   throwProps:true,
   onPress:function() {
     QLstartX = this.x;
     QLstartY = this.y;
-    QLendY = this.endX;
-    QLendY = this.endY;
   },
   onDrag:function() {
+    QLendY = this.endX;
+    QLendY = this.endY;
     hideWheel();
-    //TweenLite.to('#wheelArm', .8, { y:200, ease:Back.easeIn });
+    //TweenLite.to('#wheelArm', .8, { autoAlpha:0, ease:Back.easeIn });
   },
   onDragEnd:function() {
+    console.log('start Y is '+QLstartY+ ' and end Y is '+QLendY);
     if ( QLstartY > QLendY ) {
-      TweenLite.to('#quickLook', .6, { y:-598, ease:Expo.easeOut });
+      TweenLite.to('#quickLook', .6, { y:-618, ease:Expo.easeOut });
       TweenLite.fromTo('.drag-icon', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
     } else {
       TweenLite.to('#quickLook', .6, { y:0, ease:Expo.easeOut });
