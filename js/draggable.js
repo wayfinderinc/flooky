@@ -104,7 +104,7 @@ var dragEpisodes = new Draggable(".episode-cards ul", {
     startY = this.y;
   },
   onDrag:function() {
-    var xChange = this.x - startX,
+    xChange = this.x - startX,
         yChange = this.y - startY,
         ratio = Math.abs(xChange / yChange),
         direction = [],
@@ -156,9 +156,13 @@ Draggable.create("#quickLook", {
     if ( QLstartY > QLendY ) {
       TweenLite.to('#quickLook', .6, { y:-618, ease:Expo.easeOut });
       TweenLite.fromTo('.drag-icon', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
+      TweenLite.to(['#topNavigation', '#seriesCategory', '.randomWheel', '.seriesInfo'], .6, { autoAlpha:0, ease:Expo.easeOut });
+      // TweenLite.to('#gradientBg', .6, { transformOrigin:'top center', scale:.9, y:16, borderRadius:'28px', ease:Expo.easeOut });
     } else {
       TweenLite.to('#quickLook', .6, { y:0, ease:Expo.easeOut });
       TweenLite.to('#wheelArm', .8, { y:0, ease:Expo.easeOut });
+      TweenLite.to(['#topNavigation', '#seriesCategory', '.randomWheel', '.seriesInfo'], .6, { autoAlpha:1, ease:Expo.easeOut });
+      // TweenLite.to('#gradientBg', .6, { scale:1, y:0, borderRadius:'0px', ease:Expo.easeOut });
     }
   }
 });
@@ -180,8 +184,8 @@ function editSeriesTT() {
 function locateSeries(wheelLocation) {
   if ( wheelLocation == '0' || wheelLocation == '360' ){ seriestitle = 'Russian Doll'; seriesBackground.style.background = '#5483E6 url(img/shows/russian-doll.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-9' || wheelLocation == '351' ){ seriestitle = 'Ozark'; seriesBackground.style.background = '#5483E6 url(img/shows/ozark.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-18' || wheelLocation == '342' ){ seriestitle = 'The OA'; seriesBackground.style.background = '#5483E6 url(img/shows/the-oa.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-27' || wheelLocation == '333' ){ seriestitle = 'Hanna'; seriesBackground.style.background = '#5483E6 url(img/shows/hanna.jpg) no-repeat top center / cover'; }
+  if ( wheelLocation == '-18' || wheelLocation == '342' ){ seriestitle = 'Hanna'; seriesBackground.style.background = '#5483E6 url(img/shows/hanna.jpg) no-repeat top center / cover'; }
+  if ( wheelLocation == '-27' || wheelLocation == '333' ){ seriestitle = 'The OA'; seriesBackground.style.background = '#5483E6 url(img/shows/the-oa.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-36' || wheelLocation == '324' ){ seriestitle = 'The Handmaid\'s Tale'; seriesBackground.style.background = '#5483E6 url(img/shows/the-handmaids-tale.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-45' || wheelLocation == '315' ){ seriestitle = 'The Magicians'; seriesBackground.style.background = '#5483E6 url(img/shows/the-magicians.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-54' || wheelLocation == '306' ){ seriestitle = 'Friends'; seriesBackground.style.background = '#5483E6 url(img/shows/friends.jpg) no-repeat top center / cover'; }

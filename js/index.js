@@ -57,6 +57,36 @@ var d = document,
 
 TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:56 });
 
+// var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
+var url_string = window.location.href; //window.location.href
+var url = new URL(url_string);
+var sponsorship = url.searchParams.get("sponsorship");
+var social = url.searchParams.get("social");
+console.log('sponsorship '+sponsorship+ ' and social '+social);
+
+if ( social == 'instagram' ){
+  //var body = document.getElementsByTagName("body")[0];
+  //body.style.background = '#F3F5FA';
+  TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:72 });
+  TweenLite.set('#instagram', { display:'block', left:'50%', xPercent:-50, y:20, transformOrigin:'top center', scale:.9 });
+}
+
+if ( social == 'facebook' ){
+  var body = document.getElementsByTagName("body")[0];
+  //TweenLite.set(body, { bgColor:'#F3F5FA' });
+  body.style.background = '#F3F5FA';
+  TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:72 });
+  TweenLite.set('#facebook', { display:'block', left:'50%', xPercent:-50, y:20, transformOrigin:'top center', scale:1 });
+}
+
+if ( social == 'dribbble' ){
+  var body = document.getElementsByTagName("body")[0];
+  //TweenLite.set(body, { bgColor:'#F3F5FA' });
+  body.style.background = '#F3F5FA';
+  TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:72 });
+  TweenLite.set('#dribbble', { display:'block', left:'50%', xPercent:-50, y:20, transformOrigin:'top center', scale:1 });
+}
+
 function detectmob() {
    if(window.innerWidth <= 500) {
      // return true;
@@ -67,12 +97,6 @@ function detectmob() {
 }
 
 detectmob();
-
-// var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
-var url_string = window.location.href; //window.location.href
-var url = new URL(url_string);
-var sponsorship = url.searchParams.get("sponsorship");
-console.log('sponsorship '+sponsorship);
 
 TweenLite.set('.wheel-top-right', { x:1884 });
 TweenLite.set('.wheel-bottom-right', { x:4000, y:1885, transformOrigin:'bottom left', rotation:90 });
@@ -103,9 +127,9 @@ series1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
 series1.style.backgroundSize = 'cover';
 series2.style.background = 'url(img/shows/ozark.jpg) no-repeat';
 series2.style.backgroundSize = 'cover';
-series3.style.background = 'url(img/shows/the-oa.jpg) no-repeat';
+series3.style.background = 'url(img/shows/hanna.jpg) no-repeat';
 series3.style.backgroundSize = 'cover';
-series4.style.background = 'url(img/shows/hanna.jpg) no-repeat';
+series4.style.background = 'url(img/shows/the-oa.jpg) no-repeat';
 series4.style.backgroundSize = 'cover';
 series5.style.background = 'url(img/shows/the-handmaids-tale.jpg) no-repeat';
 series5.style.backgroundSize = 'cover';
@@ -208,14 +232,14 @@ function setCopy() {
 function initSeries() {
   if ( sponsorship == 1 || sponsorship == 2 ) {
     initBackButton();
-    var seriesTransition = new TimelineMax();
+    seriesTransition = new TimelineMax();
     seriesTransition.to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut })
       .to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:0 }, 0)
       .set('.episode-area', { display:'block' }, 0)
       .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
       .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
   } else if ( sponsorship ==3 ){
-    var seriesTransition = new TimelineMax();
+    seriesTransition = new TimelineMax();
     seriesTransition.set('.episode-area', { display:'block' }, 0)
       .to('.randomWheel', .5, { autoAlpha:.2, ease:Expo.easeOut }, 0)
       .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
