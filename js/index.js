@@ -76,7 +76,7 @@ if ( social == 'instagram' ){
 if ( social == 'facebook' ){
   var body = document.getElementsByTagName("body")[0];
   //TweenLite.set(body, { bgColor:'#F3F5FA' });
-  body.style.background = '#F3F5FA';
+  body.style.background = '#fff';
   TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:72 });
   TweenLite.set('#facebook', { display:'block', left:'50%', xPercent:-50, y:20, transformOrigin:'top center', scale:1 });
 }
