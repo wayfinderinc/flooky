@@ -125,7 +125,7 @@ TweenLite.set([dt1, dt2], { autoAlpha:.65 });
 // seriesBackground.style.backgroundSize = 'cover';
 // seriesBackground.style.backgroundPosition = 'center center';
 seriesBackground.style.backgroundBlendMode = 'multiply';
-series1.style.background = 'url(img/shows/russian-doll.jpg) no-repeat';
+series1.style.background = 'url(img/shows/star-trek-discovery.jpg) no-repeat';
 series1.style.backgroundSize = 'cover';
 series2.style.background = 'url(img/shows/ozark.jpg) no-repeat';
 series2.style.backgroundSize = 'cover';
@@ -207,7 +207,7 @@ series34.style.background = 'url(img/shows/the-walking-dead.jpg) no-repeat';
 series34.style.backgroundSize = 'cover';
 series35.style.background = 'url(img/shows/this-is-us.jpg) no-repeat';
 series35.style.backgroundSize = 'cover';
-series36.style.background = 'url(img/shows/true-detective.jpg) no-repeat';
+series36.style.background = 'url(img/shows/chilling-adventures-of-sabrina.jpg) no-repeat';
 series36.style.backgroundSize = 'cover';
 series37.style.background = 'url(img/shows/sex-education.jpg) no-repeat';
 series37.style.backgroundSize = 'cover';
@@ -215,12 +215,12 @@ series38.style.background = 'url(img/shows/smilf.jpg) no-repeat';
 series38.style.backgroundSize = 'cover';
 series39.style.background = 'url(img/shows/stranger-things.jpg) no-repeat';
 series39.style.backgroundSize = 'cover';
-series40.style.background = 'url(img/shows/chilling-adventures-of-sabrina.jpg) no-repeat';
+series40.style.background = 'url(img/shows/true-detective.jpg) no-repeat';
 series40.style.backgroundSize = 'cover';
 
 function setCopy() {
   seriesCategory.innerHTML = 'Trending';
-  var seriestitle = 'Russian Doll';
+  var seriestitle = 'Star Trek: Discovery';
   seriesTitle.innerHTML = seriestitle;
   seriesTitleTop.innerHTML = seriestitle;
   episodeTitle.innerHTML = 'Chapter Six: An Exorcism in Greendale';
@@ -240,7 +240,7 @@ function initSeries() {
       .set('.episode-area', { display:'block' }, 0)
       .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
       .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
-  } else if ( sponsorship ==3 ){
+  } else if ( sponsorship == 3 ){
     seriesTransition = new TimelineMax();
     seriesTransition.set('.episode-area', { display:'block' }, 0)
       .to('.randomWheel', .5, { autoAlpha:.2, ease:Expo.easeOut }, 0)
@@ -252,15 +252,25 @@ function initSeries() {
 sponsorSupport = document.getElementById('sponsorSupport');
 sponsorSupport.onclick = function() {
   sponsorBackground.style.background = '#000';
-  TweenLite.to('.randomWheel', .5, { autoAlpha:.25, ease:Expo.easeOut });
-  TweenLite.to('#sponsorSupport', .4, { autoAlpha:0, ease:Expo.easeOut });
-  TweenLite.set('.episode-area', { display:'block' }, 0)
-  TweenLite.fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut });
-  TweenLite.fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.04 });
+  seriesTransition = new TimelineMax();
+  seriesTransition.to('.randomWheel', .5, { autoAlpha:.25, ease:Expo.easeOut })
+    .to('#sponsorSupport', .4, { autoAlpha:0, ease:Expo.easeOut }, 0)
+    .set('.episode-area', { display:'block' }, 0)
+    .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 0)
+    .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, .04);
 }
 
 function initFlookyRandomScreen() {
+  seriesTransition.timeScale(2);
   seriesTransition.reverse();
+
+
+  if ( sponsorship == 3 ){
+    sponsorTl.timeScale(1.2);
+    sponsorTl.reverse();
+    TweenLite.to('.seriesInfo', .4, { autoAlpha:1, ease:Expo.easeOut, delay:1.4 });
+  }
+
   TweenLite.to('#backCTA', .4, { autoAlpha:0, x:-24, ease:Expo.easeInOut });
   TweenLite.to('#seriesSearch', .6, { autoAlpha:1, scale:1, ease:Expo.easeInOut });
 }
@@ -428,13 +438,12 @@ function initSponsor() {
     sponsorSupport.style.background = 'url(img/shows/game-of-thrones-sponsor-support.png) no-repeat';
     sponsorSupport.style.backgroundSize = 'cover';
     sponsorSupport.style.top = '8px';
-    sponsorTl.set('.seriesInfo', { display:'none' }, 0)
-      .to('#seriesCategory', .4, { autoAlpha:0, ease:Expo.easeInOut }, .2)
+    sponsorTl.to('.seriesInfo', .01, { autoAlpha:0, ease:Expo.easeOut }, 0)
+      .to('#seriesCategory', .4, { autoAlpha:0, ease:Expo.easeInOut }, 0)
       .to(['.dislike', '.like', '.heart-top'], .8, { autoAlpha:.8 }, 1)
       .to('.randomWheel', .4, { scale:2, y:1853, ease:Expo.easeOut, onStart:initBackButton }, .6)
       .fromTo('#sponsorSupport', .4, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut }, .8)
       .set('#sponsorBackground', { display:'block' }, 1.4);
-      console.log('tseintkj mjitos lovo birl');
   }
 }
 

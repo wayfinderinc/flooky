@@ -31,7 +31,8 @@ h3 {
 #facebook {
   display: none;
   position: absolute;
-  background: #fff;
+  background: #fff url(../img/background/facebook.jpg) no-repeat;
+  background-size: cover;
   width: 1692px;
   height: 954px;
   /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.20);*/ }

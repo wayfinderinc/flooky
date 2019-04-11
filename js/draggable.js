@@ -37,7 +37,7 @@ Draggable.create("#wheelArm", {
       sponsorTl.timeScale(5);
       sponsorTl.reverse();
 
-      seriestitle = 'Russian Doll';
+      seriestitle = 'Star Trek: Discovey';
       seriesTitle.innerHTML = seriestitle;
       seriesTitleTop.innerHTML = seriestitle;
       seriesBackground.style.background = '#5483E6 url(img/shows/russian-doll.jpg) no-repeat top center / cover';
@@ -197,7 +197,7 @@ function editSeriesTT() {
 }
 
 function locateSeries(wheelLocation) {
-  if ( wheelLocation == '0' || wheelLocation == '360' ){ seriestitle = 'Russian Doll'; seriesBackground.style.background = '#5483E6 url(img/shows/russian-doll.jpg) no-repeat top center / cover'; }
+  if ( wheelLocation == '0' || wheelLocation == '360' ){ seriestitle = 'Star Trek: Discovery'; seriesBackground.style.background = '#5483E6 url(img/shows/star-trek-discovery.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-9' || wheelLocation == '351' ){ seriestitle = 'Ozark'; seriesBackground.style.background = '#5483E6 url(img/shows/ozark.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-18' || wheelLocation == '342' ){ seriestitle = 'Hanna'; seriesBackground.style.background = '#5483E6 url(img/shows/hanna.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-27' || wheelLocation == '333' ){ seriestitle = 'The OA'; seriesBackground.style.background = '#5483E6 url(img/shows/the-oa.jpg) no-repeat top center / cover'; }
@@ -231,11 +231,11 @@ function locateSeries(wheelLocation) {
   if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; seriesBackground.style.background = '#5483E6 url(img/shows/game-of-thrones-sponsor.jpg) no-repeat top center / cover'; initSponsor(); }
   if ( wheelLocation == '-297' || wheelLocation == '63' ){ seriestitle = 'The Walking Dead'; seriesBackground.style.background = '#5483E6 url(img/shows/the-walking-dead.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-306' || wheelLocation == '54' ){ seriestitle = 'This is Us'; seriesBackground.style.background = '#5483E6 url(img/shows/this-is-us.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-315' || wheelLocation == '45' ){ seriestitle = 'True Detective'; seriesBackground.style.background = '#5483E6 url(img/shows/true-detective.jpg) no-repeat top center / cover'; }
+  if ( wheelLocation == '-315' || wheelLocation == '45' ){ seriestitle = 'Chilling Adventures of Sabrina'; seriesBackground.style.background = '#5483E6 url(img/shows/chilling-adventures-of-sabrina.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-324' || wheelLocation == '36' ){ seriestitle = 'Sex Education'; seriesBackground.style.background = '#5483E6 url(img/shows/sex-education.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-333' || wheelLocation == '27' ){ seriestitle = 'Smilf'; seriesBackground.style.background = '#5483E6 url(img/shows/smilf.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-342' || wheelLocation == '18' ){ seriestitle = 'Stranger Things'; seriesBackground.style.background = '#5483E6 url(img/shows/stranger-things.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-351' || wheelLocation == '9' ){ seriestitle = 'Chilling Adventures of Sabrina'; seriesBackground.style.background = '#5483E6 url(img/shows/chilling-adventures-of-sabrina.jpg) no-repeat top center / cover'; }
+  if ( wheelLocation == '-351' || wheelLocation == '9' ){ seriestitle = 'True Detective'; seriesBackground.style.background = '#5483E6 url(img/shows/true-detective.jpg) no-repeat top center / cover'; }
 }
 
 function editEpisodeCopy() {
