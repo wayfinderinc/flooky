@@ -20,7 +20,7 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
 
 #randomScreen { display: flex; flex-direction: column; justify-content: space-between; position: absolute; width: 100%; height: 692px;
   #gradientBg { position: absolute; width: 100%; height: 100%; overflow: hidden;
-    #seriesBackground { position: absolute; background:#5483E6 url("../img/shows/russian-doll.jpg") no-repeat top center; background-size: cover; width: 667px; height: 1000px; left: 50%; margin-left: -333.5px; opacity: .5; }
+    #seriesBackground { position: absolute; background:#5483E6 url("../img/shows/star-trek-discovery.jpg") no-repeat top center; background-size: cover; width: 667px; height: 1000px; left: 50%; margin-left: -333.5px; opacity: .5; }
     .multiply { background-blend-mode: multiply; }
     #background1 { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(270deg, #796EFD 0%, #FF7EAF 100%); background-blend-mode: lighten; opacity: .8; }
     #flookySymbols { display: none; position: absolute; background: url(../img/misc/symbols.png) no-repeat; background-size: cover; width: 333px; height: 532px; top: 86px; left: 15px; }
