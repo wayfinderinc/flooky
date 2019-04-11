@@ -252,6 +252,7 @@ function initSeries() {
 sponsorSupport = document.getElementById('sponsorSupport');
 sponsorSupport.onclick = function() {
   sponsorBackground.style.background = '#000';
+  seriesBackground.style.background = '#5483E6 url(img/shows/game-of-thrones-sponsor.jpg) no-repeat top center / cover';
   seriesTransition = new TimelineMax();
   seriesTransition.to('.randomWheel', .5, { autoAlpha:.25, ease:Expo.easeOut })
     .to('#sponsorSupport', .4, { autoAlpha:0, ease:Expo.easeOut }, 0)
