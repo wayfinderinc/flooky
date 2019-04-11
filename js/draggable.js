@@ -40,7 +40,7 @@ Draggable.create("#wheelArm", {
       seriestitle = 'Star Trek: Discovey';
       seriesTitle.innerHTML = seriestitle;
       seriesTitleTop.innerHTML = seriestitle;
-      seriesBackground.style.background = '#5483E6 url(img/shows/star-trek-discovey.jpg) no-repeat top center / cover';
+      seriesBackground.style.background = '#5483E6 url(img/shows/star-trek-discovery.jpg) no-repeat top center / cover';
       TweenLite.to('.like', .6, { scaleX:1, x:0, ease:Expo.easeOut });
       TweenLite.to('.heart-like-fill', .6, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to(".randomWheel", .8, { rotation:-288, ease:Expo.easeOut });
