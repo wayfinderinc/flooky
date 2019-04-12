@@ -823,7 +823,7 @@ function socialDribbble() {
    .to('.randomWheel', .4, { scale:1, autoAlpha:1, y:0, ease:Expo.easeInOut }, 17.5)
    .to('.series-info', .4, { autoAlpha:0, ease:Expo.easeInOut }, 17.5)
    .to('.seriesInfo', .4, { autoAlpha:1, ease:Expo.easeOut }, 17.5)
-   .to('.like', .4, { scaleX:1, x:0, autoAlpha:.7, ease:Expo.easeOut }, 18.2)
+   .to('.like', .4, { scaleX:1, x:0, autoAlpha:.8, ease:Expo.easeOut }, 18.2)
    .to('.heart-like-fill', .4, { fill:'#ffffff', ease:Expo.easeOut }, 18.2)
    .to('.dislike', .4, { autoAlpha:.7, ease:Expo.easeOut }, 18.2)
 
