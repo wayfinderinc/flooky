@@ -87,9 +87,10 @@ if ( social == 'facebook' ){
 if ( social == 'dribbble' ){
   var body = document.getElementsByTagName("body")[0];
   //TweenLite.set(body, { bgColor:'#F3F5FA' });
-  body.style.background = '#F3F5FA';
+  body.style.background = '#fff';
   TweenLite.set(['.iphone', '#flookyApp'], { left:'50%', xPercent:-50, y:72 });
   TweenLite.set('#dribbble', { display:'block', left:'50%', xPercent:-50, y:20, transformOrigin:'top center', scale:1 });
+  socialDribbble();
 }
 
 function detectmob() {
@@ -763,6 +764,91 @@ function socialInstagram() {
    .to('.heart-like-fill', .1, { fill:'#ffffff', ease:Expo.easeOut }, 19.2)
    .to('.dislike', .1, { autoAlpha:.7, ease:Expo.easeOut }, 19.2)
    .to('#seriesBackground', .4, { autoAlpha:1, ease:Expo.easeOut }, 19.2)
+
+   ;
+}
+
+
+function socialDribbble() {
+  var dribbbleAni = new TimelineMax({ delay:1 });
+  dribbbleAni.set('#wheelArm', { onStart:function() {
+      likeSeries();
+    } }, 8.2)
+
+    .to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:0, ease:Expo.easeInOut, onStart:function() {
+      initBackButton();
+    } }, 9.8)
+    .to(['.randomWheel'], .4, { scale:.8, autoAlpha:7, ease:Expo.easeInOut, y:-384, autoAlpha:0 }, 9.8)
+    .set('.episode-area', { display:'block' }, 9.8)
+    .fromTo('.series-info', .5, { autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeInOut }, 9.8)
+    .fromTo('.seriesArea', .6, { autoAlpha:0, y: 200 }, { autoAlpha:1, y:0, ease:Expo.easeInOut }, 9.84)
+
+    .set('#sponsorBackground', { display:'block', onComplete:function() {
+      showSeriesDescription();
+    } }, 11.2)
+
+
+    .set('#sponsorBackground', { display:'block', onComplete:function() {
+      showEpisodeDescription();
+    } }, 12.6)
+
+
+    .to('.episode-cards', 1.2, { x:-1372, ease:Expo.easeOut }, 13.8)
+    .to('.episode-cards ul li', .6, { transformOrigin:'left center', rotationY:6, ease:Expo.easeOut }, 13.8)
+    .to('.imdb-se', .4, { autoAlpha:.1, ease:Expo.easeOut }, 13.8)
+    .to('.imdb-se', .4, { autoAlpha:1, ease:Expo.easeOut, onStart:function() {
+      episodeTitle.innerHTML = 'Eastwatch';
+      imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  August 13, 2017 &nbsp;&bull;&nbsp; 59min';
+      episodeDescription.innerHTML = 'Daenerys demands loyalty from the surviving Lannister soldiers; Jon heeds Bran\'s warning about White Walkers on the move; Cersei vows to vanquish anyone or anything that stands in her way.';
+    } }, 14.6)
+    .to('.episode-cards ul li', .4, { rotationY:0, ease:Expo.easeOut }, 14.6)
+
+
+    .to('.episode-cards', 1, { x:-1029, ease:Expo.easeOut }, 15.6)
+    .to('.episode-cards ul li', .6, { transformOrigin:'right center', rotationY:-6, ease:Expo.easeOut }, 15.6)
+    .to('.imdb-se', .4, { autoAlpha:.1, ease:Expo.easeOut }, 15.6)
+    .to('.episode-cards ul li', .4, { rotationY:0, ease:Expo.easeOut }, 16.2)
+    .to('.imdb-se', .4, { autoAlpha:1, ease:Expo.easeOut, onStart:function() {
+      episodeTitle.innerHTML = 'The Spoils of War';
+      imdbEpisdeInfo.innerHTML = 'Season 7 Episode 1 &nbsp;&bull;&nbsp;  August 6, 2017 &nbsp;&bull;&nbsp; 50min';
+      episodeDescription.innerHTML = 'Daenerys takes matters into her own hands. Arya reaches her destination. Jaime and Bronn collect the spoils from the war with the Tyrells.';
+    } }, 16.4)
+
+
+   .to('#backCTA', .4, { autoAlpha:0, x:-24, ease:Expo.easeOut }, 17.4)
+   .to('#seriesSearch', .6, { autoAlpha:1, scale:1, ease:Expo.easeOut }, 17.4)
+
+   .to('.seriesArea', .4, { autoAlpha:0, y: 200, ease:Expo.easeInOut }, 17.5)
+   .to(['#seriesCategory', '.seriesInfo'], .3, { autoAlpha:1, ease:Expo.easeInOut }, 17.5)
+   .to('.randomWheel', .4, { scale:1, autoAlpha:1, y:0, ease:Expo.easeInOut }, 17.5)
+   .to('.series-info', .4, { autoAlpha:0, ease:Expo.easeInOut }, 17.5)
+   .to('.seriesInfo', .4, { autoAlpha:1, ease:Expo.easeOut }, 17.5)
+   .to('.like', .4, { scaleX:1, x:0, autoAlpha:.7, ease:Expo.easeOut }, 18.2)
+   .to('.heart-like-fill', .4, { fill:'#ffffff', ease:Expo.easeOut }, 18.2)
+   .to('.dislike', .4, { autoAlpha:.7, ease:Expo.easeOut }, 18.2)
+
+
+   // .to('#sponsorBackground', .8, { autoAlpha:0, ease:Expo.easeOut }, 17.5)
+   // .to('#quickLookBackground', .8, { autoAlpha:0, ease:Expo.easeOut }, 17.5)
+   // .to('.category-type h3', .8, { color:'#223041', ease:Expo.easeOut }, 17.5)
+   // .to('#wheelArmBg', .8, { background:'#FF7EAF', boxShadow:'4px 4px 8px 0 #E1E8EE' }, 17.5)
+   // .to(['#series32', '#series34'], .8, { autoAlpha:1, ease:Expo.easeOut }, 17.5)
+   //
+   // .set('.episode-area', { display:'none' }, 18.3)
+   //
+   // .to('.randomWheel', .6, { rotation:0, ease:Expo.easeOut }, 18.8)
+   // .to('.seriesInfo', .4, { autoAlpha:.025, y:10, ease:Expo.easeOut }, 18.8)
+   // .to('#seriesBackground', .4, { autoAlpha:.4, ease:Expo.easeOut }, 18.8)
+   // .set('#seriesBackground', { background: '#5483E6 url(img/shows/star-trek-discovery.jpg) no-repeat top center / cover', onStart:function() {
+   //    seriestitle = 'Star Trek: Discovery';
+   //    seriesTitle.innerHTML = seriestitle;
+   //    seriesTitleTop.innerHTML = seriestitle;
+   //  } }, 19.2)
+   // .to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut }, 19.2)
+   // .to('.like', .1, { scaleX:1, x:0, autoAlpha:.7, ease:Expo.easeOut }, 19.2)
+   // .to('.heart-like-fill', .1, { fill:'#ffffff', ease:Expo.easeOut }, 19.2)
+   // .to('.dislike', .1, { autoAlpha:.7, ease:Expo.easeOut }, 19.2)
+   // .to('#seriesBackground', .4, { autoAlpha:1, ease:Expo.easeOut }, 19.2)
 
    ;
 }
