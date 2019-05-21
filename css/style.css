@@ -297,108 +297,145 @@ h3 {
           padding-top: 24px; }
       #randomScreen .episode-area .seriesArea .imdb-ep {
         display: none; }
-  #randomScreen #quickLook {
-    position: absolute;
-    background: #fff;
+
+#flookyLogo {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  top: 18px;
+  background: url(../img/logo/logo-white.svg) no-repeat;
+  left: 50%;
+  margin-left: -40px;
+  display: none; }
+
+#quickLook {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 91%;
+  top: 692px; }
+  #quickLook #quickLookContent {
+    position: relative;
     width: 100%;
-    top: 692px; }
-    #randomScreen #quickLook #quickLookBackground {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100%; }
-    #randomScreen #quickLook .drag-icon {
-      display: none;
-      position: absolute;
-      background: url(../img/misc/drag.svg) no-repeat;
-      width: 48px;
-      height: 8px;
-      top: 16px; }
-    #randomScreen #quickLook .category-type h3 {
-      position: relative;
-      color: #223041; }
-    #randomScreen #quickLook #catGenre {
-      color: #fff;
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 19px; }
-    #randomScreen #quickLook .cat-genre ul {
-      width: 2000px;
+    height: 100%; }
+  #quickLook .category-list {
+    position: relative;
+    width: 100%; }
+  #quickLook .drag-icon {
+    display: none;
+    position: absolute;
+    background: url(../img/misc/drag.svg) no-repeat;
+    width: 48px;
+    height: 8px;
+    top: 16px; }
+  #quickLook h3 {
+    position: relative;
+    color: #223041;
+    width: 200px; }
+  #quickLook #catGenre {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px; }
+  #quickLook .cat-genre ul {
+    width: 2000px;
+    height: 72px;
+    margin: 0;
+    padding: 0px; }
+    #quickLook .cat-genre ul li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #C9D3DC;
+      width: 98px;
       height: 72px;
-      margin: 0;
-      padding: 0px; }
-      #randomScreen #quickLook .cat-genre ul li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #C9D3DC;
-        width: 98px;
-        height: 72px;
-        list-style: none;
-        float: left;
-        margin-right: 16.5px;
-        border-radius: 3px;
-        box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
-    #randomScreen #quickLook .cat-favorites ul {
-      width: 2000px;
+      list-style: none;
+      float: left;
+      margin-right: 16.5px;
+      border-radius: 3px;
+      box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
+  #quickLook .cat-favorites ul {
+    width: 2000px;
+    height: 147px;
+    margin: 0;
+    padding: 0px; }
+    #quickLook .cat-favorites ul li {
+      width: 98px;
       height: 147px;
-      margin: 0;
-      padding: 0px; }
-      #randomScreen #quickLook .cat-favorites ul li {
-        width: 98px;
-        height: 147px;
-        list-style: none;
-        float: left;
-        margin-right: 16.5px;
-        border-radius: 3px;
-        box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
-    #randomScreen #quickLook .cat-favorites .card-series-copy {
-      height: 46px;
-      color: #223041;
-      font-family: "Open Sans", sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      padding-top: 6px;
-      box-shadow: none; }
-    #randomScreen #quickLook .cat-recommended ul {
-      width: 2000px;
+      list-style: none;
+      float: left;
+      margin-right: 16.5px;
+      border-radius: 3px;
+      box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
+  #quickLook .cat-favorites .card-series-copy {
+    height: 46px;
+    color: #223041;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    padding-top: 6px;
+    box-shadow: none; }
+  #quickLook .cat-recommended ul {
+    width: 2000px;
+    height: 147px;
+    margin: 0;
+    padding: 0px; }
+    #quickLook .cat-recommended ul li {
+      width: 98px;
       height: 147px;
-      margin: 0;
-      padding: 0px; }
-      #randomScreen #quickLook .cat-recommended ul li {
-        width: 98px;
-        height: 147px;
-        list-style: none;
-        float: left;
-        margin-right: 16.5px;
-        border-radius: 3px;
-        box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
-    #randomScreen #quickLook .cat-recommended .card-series-copy {
-      height: 46px;
-      color: #223041;
-      font-family: "Open Sans", sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      padding-top: 6px;
-      box-shadow: none; }
-  #randomScreen #wheelArm {
+      list-style: none;
+      float: left;
+      margin-right: 16.5px;
+      border-radius: 3px;
+      box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
+  #quickLook .cat-recommended .card-series-copy {
+    height: 46px;
+    color: #223041;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    padding-top: 6px;
+    box-shadow: none; }
+  #quickLook .cat-recently-viewed ul {
+    width: 2000px;
+    height: 147px;
+    margin: 0;
+    padding: 0px; }
+    #quickLook .cat-recently-viewed ul li {
+      width: 98px;
+      height: 147px;
+      list-style: none;
+      float: left;
+      margin-right: 16.5px;
+      border-radius: 3px;
+      box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
+  #quickLook .cat-recently-viewed .card-series-copy {
+    height: 46px;
+    color: #223041;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    padding-top: 6px;
+    box-shadow: none; }
+
+#wheelArm {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 670px;
+  z-index: 10001; }
+  #wheelArm #armIcon {
+    position: absolute;
+    width: 20px;
+    height: 28px; }
+  #wheelArm #wheelArmBg {
     position: absolute;
     width: 48px;
     height: 48px;
-    top: 670px;
-    z-index: 10001; }
-    #randomScreen #wheelArm #armIcon {
-      position: absolute;
-      width: 20px;
-      height: 28px; }
-    #randomScreen #wheelArm #wheelArmBg {
-      position: absolute;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: #FF7EAF;
-      box-shadow: 4px 4px 8px 0 #E1E8EE; }
+    border-radius: 12px;
+    background: #FF7EAF;
+    box-shadow: 4px 4px 8px 0 #E1E8EE; }
 
 #topNavigation {
   position: absolute;
@@ -424,8 +461,3 @@ h3 {
     height: 18px;
     top: 24px;
     right: 24px; }
-
-#widthandheight {
-  position: absolute;
-  left: 24px;
-  top: 100px; }

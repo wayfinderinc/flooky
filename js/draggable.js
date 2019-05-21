@@ -47,13 +47,6 @@ Draggable.create("#wheelArm", {
       TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut, delay:.2 });
       TweenLite.to("#wheelArm", .6, { y:0, ease:Expo.easeOut });
       TweenLite.to(".randomWheel", .8, { rotation:-360, ease:Expo.easeOut });
-
-      // TweenLite.to('.seriesInfo', .2, { autoAlpha:.025, y:10, ease:Expo.easeOut, onComplete:function() {
-      //   // editSeriesTT();
-      //   initSponsor();
-      //   TweenLite.to('.seriesInfo', .4, { autoAlpha:1, y:0, ease:Expo.easeInOut });
-      // } });
-
     },
     onDrag:function(){
       reverseWheel++;
@@ -74,13 +67,17 @@ Draggable.create("#wheelArm", {
     }
 });
 
-Draggable.create(".cat-genre ul", {
+Draggable.create(".cat-genre", {
   type:"x",
   edgeResistance:0.65,
-  bounds:{minX:0, maxX:-734},
+  bounds:{minX:0, maxX:-344},
   throwProps:true,
+  lockAxis:true,
   onDrag:function() {
-    //console.log(x);
+    console.log(this.x);
+    dragQuickLook.disable();
+  },
+  onDragEnd:function() {
   }
 });
 
@@ -89,9 +86,11 @@ Draggable.create(".cat-fav", {
   edgeResistance:0.65,
   bounds:{minX:0, maxX:-344},
   throwProps:true,
+  lockAxis:true,
   onDrag:function() {
-    // var x = this.x;
-    // console.log(x);
+    dragQuickLook.disable();
+  },
+  onDragEnd:function() {
   }
 });
 
@@ -100,9 +99,11 @@ Draggable.create(".cat-rec", {
   edgeResistance:0.65,
   bounds:{minX:0, maxX:-344},
   throwProps:true,
+  lockAxis:true,
   onDrag:function() {
-    // var x = this.x;
-    // console.log(x);
+    dragQuickLook.disable();
+  },
+  onDragEnd:function() {
   }
 });
 
@@ -131,7 +132,6 @@ var dragEpisodes = new Draggable(".episode-cards ul", {
       TweenLite.to('.episode-cards ul li', .6, { transformOrigin:'right center', rotationY:-6, ease:Expo.easeOut });
     }
     TweenLite.to('.imdb-se', .4, { autoAlpha:.1, ease:Expo.easeOut });
-    //console.log(episodeDirection);
   },
   onDragEnd:function() {
     TweenLite.to('.episode-cards ul li', .4, { rotationY:0, ease:Expo.easeOut });
@@ -151,42 +151,61 @@ function getMomentaryDirection(target) {
   return direction.join("-");
 }
 
-Draggable.create("#quickLook", {
-  type:"y",
+var dragQuickLook = new Draggable("#quickLook", {
+  type:'y',
   edgeResistance:1,
   bounds:{minY:0, maxY:-618},
   throwProps:true,
+  lockAxis:true,
   onPress:function() {
     QLstartX = this.x;
     QLstartY = this.y;
+    TweenLite.to('#wheelArm', .6, { y:160, ease:Back.easeIn });
+    TweenLite.to('.drag-icon', .6, { autoAlpha:0, ease:Expo.easeOut });
   },
   onDrag:function() {
     QLendY = this.endX;
     QLendY = this.endY;
-    hideWheel();
-    //TweenLite.to('#wheelArm', .8, { autoAlpha:0, ease:Back.easeIn });
   },
   onDragEnd:function() {
-    console.log('start Y is '+QLstartY+ ' and end Y is '+QLendY);
     if ( QLstartY > QLendY ) {
-      TweenLite.to('#quickLook', .6, { y:-618, ease:Expo.easeOut });
+      TweenLite.to('#quickLook', .6, { y:-618, ease:Expo.easeOut, onStart:function() {
+        TweenLite.fromTo('#flookyLogo', .8, { display:'block', y:-100 }, { y:0, ease:Expo.easeOut });
+      } });
       TweenLite.fromTo('.drag-icon', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
-      TweenLite.to(['#topNavigation', '#seriesCategory', '.randomWheel', '.seriesInfo'], .6, { autoAlpha:0, ease:Expo.easeOut });
-      // TweenLite.to('#gradientBg', .6, { transformOrigin:'top center', scale:.9, y:16, borderRadius:'28px', ease:Expo.easeOut });
+      TweenLite.to(['#topNavigation', '#seriesCategory', '.randomWheel', '.seriesInfo'], .6, { autoAlpha:0, ease:Expo.easeOut, onComplete:function() {
+        dragQuickLookContent.enable();
+      } });
     } else {
       TweenLite.to('#quickLook', .6, { y:0, ease:Expo.easeOut });
-      TweenLite.to('#wheelArm', .8, { y:0, ease:Expo.easeOut });
+      TweenLite.to('#wheelArm', .8, { y:0, ease:Expo.easeOut, onComplete:function() {
+        dragQuickLookContent.disable();
+        dragQuickLook.enable();
+      } });
+      TweenLite.to('#flookyLogo', 1.2, { y:-100, ease:Expo.easeOut });
       TweenLite.to(['#topNavigation', '#seriesCategory', '.randomWheel', '.seriesInfo'], .6, { autoAlpha:1, ease:Expo.easeOut });
-      // TweenLite.to('#gradientBg', .6, { scale:1, y:0, borderRadius:'0px', ease:Expo.easeOut });
     }
   }
 });
 
-function hideWheel() {
-  TweenLite.to('#wheelArm', .6, { y:160, ease:Back.easeIn });
-  TweenLite.to('.drag-icon', .6, { autoAlpha:0, ease:Expo.easeOut });
-}
+var dragQuickLookContent = new Draggable("#quickLookContent", {
+  type:"scrollTop",
+  edgeResistance:1,
+  throwProps:true,
+  bounds:'#quickLookContent',
+  lockAxis:true,
+  onPress:function() {
+    QLCstartY = this.startY;
+    QLCy = this.y;
+    if ( QLCstartY == 0 ){
+      dragQuickLook.enable();
+    } else {
+      dragQuickLook.disable();
+    }
+  }
+});
 
+dragQuickLookContent.disable();
 
 function editSeriesTT() {
   wheelLocation = dragWheel.endRotation;
@@ -228,7 +247,7 @@ function locateSeries(wheelLocation) {
   if ( wheelLocation == '-261' || wheelLocation == '99' ){ seriestitle = 'The Good Place'; seriesBackground.style.background = '#5483E6 url(img/shows/the-good-place.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-270' || wheelLocation == '90' ){ seriestitle = 'Hanna'; seriesBackground.style.background = '#5483E6 url(img/shows/hanna.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-279' || wheelLocation == '81' ){ seriestitle = 'Better Call Saul'; seriesBackground.style.background = '#5483E6 url(img/shows/better-call-saul.jpg) no-repeat top center / cover'; }
-  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; seriesBackground.style.background = '#5483E6 url(img/shows/game-of-thrones-sponsor.jpg) no-repeat top center / cover'; initSponsor(); }
+  if ( wheelLocation == '-288' || wheelLocation == '72' ){ seriestitle = 'Game of Thrones'; seriesBackground.style.background = '#5483E6 url(img/shows/game-of-thrones4.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-297' || wheelLocation == '63' ){ seriestitle = 'The Walking Dead'; seriesBackground.style.background = '#5483E6 url(img/shows/the-walking-dead.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-306' || wheelLocation == '54' ){ seriestitle = 'This is Us'; seriesBackground.style.background = '#5483E6 url(img/shows/this-is-us.jpg) no-repeat top center / cover'; }
   if ( wheelLocation == '-315' || wheelLocation == '45' ){ seriestitle = 'Chilling Adventures of Sabrina'; seriesBackground.style.background = '#5483E6 url(img/shows/chilling-adventures-of-sabrina.jpg) no-repeat top center / cover'; }

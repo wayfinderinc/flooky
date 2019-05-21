@@ -74,37 +74,47 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
       .imdb-ep { display: none; }
     }
   }
+}
 
-  #quickLook { position: absolute; background: #fff; width: 100%; top: 692px;
-    #quickLookBackground { display: none; position: absolute; width: 100%; height: 100%; }
-    .drag-icon { display: none; position: absolute; background: url(../img/misc/drag.svg) no-repeat; width: 48px; height: 8px; top: 16px; }
-    .category-type h3 { position: relative; color: #223041; }
-    #catGenre { color: #fff; font-family: "Open Sans", sans-serif; font-size: 14px; font-weight: 600; line-height: 19px; }
-    .cat-genre {
-      ul { width: 2000px; height: 72px; margin:0; padding: 0px;
-        li { display: flex; justify-content: center; align-items: center; background: $cloud-grey; width: 98px; height: 72px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
-      }
-    }
-    .cat-favorites {
-      ul { width: 2000px; height: 147px; margin:0; padding: 0px;
-        li { width: 98px; height: 147px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15);
-        }
-      }
-      .card-series-copy { height: 46px; color: #223041; font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; padding-top: 6px; box-shadow: none; }
-    }
-    .cat-recommended {
-      ul { width: 2000px; height: 147px; margin:0; padding: 0px;
-        li { width: 98px; height: 147px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15);
-        }
-      }
-      .card-series-copy { height: 46px; color: #223041; font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; padding-top: 6px; box-shadow: none; }
+#flookyLogo { position: absolute; width: 80px; height: 40px; top:18px; background: url(../img/logo/logo-white.svg) no-repeat; left: 50%; margin-left: -40px; display: none; }
+
+#quickLook { position: absolute; background: #fff; width: 100%; height: 91%; top: 692px;
+  #quickLookContent { position: relative; width: 100%; height: 100%; }
+  .category-list { position: relative; width: 100%; }
+  .drag-icon { display: none; position: absolute; background: url(../img/misc/drag.svg) no-repeat; width: 48px; height: 8px; top: 16px; }
+  h3 { position: relative; color: #223041; width: 200px; }
+  #catGenre { color: #fff; font-family: "Open Sans", sans-serif; font-size: 14px; font-weight: 600; line-height: 19px; }
+  .cat-genre {
+    ul { width: 2000px; height: 72px; margin:0; padding: 0px;
+      li { display: flex; justify-content: center; align-items: center; background: $cloud-grey; width: 98px; height: 72px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15); }
     }
   }
-
-  #wheelArm { position: absolute; width: 48px; height: 48px; top: 670px; z-index: 10001;
-    #armIcon { position: absolute; width: 20px; height: 28px; }
-    #wheelArmBg { position: absolute; width: 48px; height: 48px; border-radius: 12px; background: #FF7EAF; box-shadow: 4px 4px 8px 0 #E1E8EE; }
+  .cat-favorites {
+    ul { width: 2000px; height: 147px; margin:0; padding: 0px;
+      li { width: 98px; height: 147px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .card-series-copy { height: 46px; color: #223041; font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; padding-top: 6px; box-shadow: none; }
   }
+  .cat-recommended {
+    ul { width: 2000px; height: 147px; margin:0; padding: 0px;
+      li { width: 98px; height: 147px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .card-series-copy { height: 46px; color: #223041; font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; padding-top: 6px; box-shadow: none; }
+  }
+  .cat-recently-viewed {
+    ul { width: 2000px; height: 147px; margin:0; padding: 0px;
+      li { width: 98px; height: 147px; list-style: none; float: left; margin-right: 16.5px;  border-radius: 3px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .card-series-copy { height: 46px; color: #223041; font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; padding-top: 6px; box-shadow: none; }
+  }
+}
+
+#wheelArm { position: absolute; width: 48px; height: 48px; top: 670px; z-index: 10001;
+  #armIcon { position: absolute; width: 20px; height: 28px; }
+  #wheelArmBg { position: absolute; width: 48px; height: 48px; border-radius: 12px; background: #FF7EAF; box-shadow: 4px 4px 8px 0 #E1E8EE; }
 }
 
 #topNavigation { position: absolute; width: 100%; height: 66px; top:0px;
@@ -112,5 +122,3 @@ h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; pa
   #backCTA { display: none; position: absolute; width: 14px; height: 14px; top: 26px; left: 24px; }
   #hambugerMenu { position: absolute; width: 24px; height: 18px; top: 24px; right: 24px; }
 }
-
-#widthandheight { position: absolute; left: 24px; top: 100px; }
