@@ -19,50 +19,6 @@ h3 {
   overflow: visible;
   padding: 0px; }
 
-#instagram {
-  display: none;
-  position: absolute;
-  background: #fff url(../img/background/instagram-4.jpg) no-repeat;
-  background-size: cover;
-  width: 1080px;
-  height: 1080px;
-  /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.20);*/ }
-
-#facebook {
-  display: none;
-  position: absolute;
-  background: #fff url(../img/background/facebook-2.jpg) no-repeat;
-  background-size: cover;
-  width: 1692px;
-  height: 954px;
-  /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.20);*/ }
-
-#dribbble {
-  display: none;
-  position: absolute;
-  background: #fff url(../img/background/dribbble.jpg) no-repeat;
-  background-size: cover;
-  width: 1277px;
-  height: 958px;
-  /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.20);*/ }
-
-#iphoneXS {
-  display: none;
-  position: absolute;
-  background: url(../img/misc/iphone-xs.svg) no-repeat;
-  background-size: cover;
-  width: 408.5px;
-  height: 833px;
-  top: 17px; }
-
-#iphoneX {
-  display: none;
-  position: absolute;
-  background: url(../img/misc/iphone-xs.svg) no-repeat;
-  background-size: cover;
-  width: 408.5px;
-  height: 750px; }
-
 #flookyApp {
   position: absolute;
   background: #fff;
@@ -79,6 +35,31 @@ h3 {
   top: 19px;
   border-radius: 42px;
   box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.4); }
+
+#topNavigation {
+  position: absolute;
+  width: 100%;
+  height: 66px;
+  top: 0px; }
+  #topNavigation #seriesSearch {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    top: 24px;
+    left: 24px; }
+  #topNavigation #backCTA {
+    display: none;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 26px;
+    left: 24px; }
+  #topNavigation #hambugerMenu {
+    position: absolute;
+    width: 24px;
+    height: 18px;
+    top: 24px;
+    right: 24px; }
 
 #randomScreen {
   display: flex;
@@ -436,28 +417,3 @@ h3 {
     border-radius: 12px;
     background: #FF7EAF;
     box-shadow: 4px 4px 8px 0 #E1E8EE; }
-
-#topNavigation {
-  position: absolute;
-  width: 100%;
-  height: 66px;
-  top: 0px; }
-  #topNavigation #seriesSearch {
-    position: absolute;
-    width: 17px;
-    height: 18px;
-    top: 24px;
-    left: 24px; }
-  #topNavigation #backCTA {
-    display: none;
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    top: 26px;
-    left: 24px; }
-  #topNavigation #hambugerMenu {
-    position: absolute;
-    width: 24px;
-    height: 18px;
-    top: 24px;
-    right: 24px; }
